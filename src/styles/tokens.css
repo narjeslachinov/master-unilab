@@ -1,31 +1,56 @@
 :root {
   /* Colors */
-  
+
   /* main color */
-  --primary:   #024a71; 
+  --primary: #024a71;
 
   /* secondary:*/
 
-  --secondary: #393939; 
-  --accent-1:  #6896f9; 
-  --accent-2:  #9EF7E1; 
+  --secondary: #393939;
+  --accent-1: #6896f9;
+  --accent-2: #9ef7e1;
 
   /* text color */
-  --text-light: #FFFFFF;  
-  --text-dark: #32363b;  
-  --text-gray-1: #a4a4a4;   
-  --text-gray-2: #717070;   
+  --light: #ffffff;
+  --dark: #32363b;
+  --gray-1: #a4a4a4;
+  --gray-2: #717070;
+  --gray-3: oklch(44.6% 0.03 256.802);
 
   /* background color*/
-  --background-neutral-1: #f6f6f6;
-  --background-neutral-2: #d8d7cd;
-  --background-neutral-3: #fbfbfb;
+  --neutral-1: #f6f6f6;
+  --neutral-2: #d8d7cd;
+  --neutral-3: #fbfbfb;
+
+  /* glass color */
+
+  --glass-1: rgba(255, 255, 255, 0.8);
+  --glass-2: rgba(240, 240, 240, 0.95);
 
   /* Radius */
   --main-radius: 1.2rem;
 
   /* Shadows */
   --main-inset-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+  /* Z Index Scale */
 
+  --z-base: 0;
+
+  --z-content: 10;
+
+  --z-sticky: 20;
+
+  --z-header: 30;
+
+  --z-dropdown: 40;
+
+  --z-overlay: 50;
+
+  --z-modal: 60;
+
+  --z-popover: 70;
+
+  --z-tooltip: 80;
+
+  --z-toast: 90;
 }
-

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { iranSans } from "@/fonts/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html lang="fa" dir="rtl">
+      <body className={`${iranSans.variable} flex min-h-full flex-col`}>
+        {children}
+      </body>
     </html>
   );
 }

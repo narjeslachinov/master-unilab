@@ -165,6 +165,19 @@ expands: ["@commitlint/config-conventional"],
 
 ---
 
+#icon
+    Install:
+    npm install @hugeicons/react @hugeicons/core-free-icons
+---
+
+#Slot
+
+    Slot allows you to pass your component's props and classes to a user-specified element instead of rendering a fixed tag (like a button).
+    This feature is typically used with the asChild prop.
+    Install:
+    npm install @radix-ui/react-slot
+---
+
 # Status
 
 ✅ Base packages installed
