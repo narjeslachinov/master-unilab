@@ -1,45 +1,31 @@
-// import Link from "next/link";
+import Link from "next/link";
 
-// import { NavLink } from "../../type/header.type";
+import { SubMenuItem } from "../../type/header.type";
+import { megaSubMenu } from "../../data/header.data";
 
-// interface Props {
-//   items?: NavLink[];
-// }
+type Props = {
+  items: SubMenuItem[];
+};
 
-// export default function DropdownMenu({ items = [] }: Props) {
-//   return (
-//     <div
-//       className="
-//       absolute
-//       top-full
-//       right-0
-//       z-50
-//       hidden
-//       min-w-[220px]
-//       flex-col
-//       rounded-xl
-//       border
-//       bg-white
-//       p-2
-//       shadow-xl
-//       group-hover:flex
-//       "
-//     >
-//       {items.map((item) => (
-//         <Link
-//           key={item.id}
-//           href={item.href}
-//           className="
-//           rounded-lg
-//           px-4
-//           py-2.5
-//           transition
-//           hover:bg-slate-100
-//           "
-//         >
-//           {item.name}
-//         </Link>
-//       ))}
-//     </div>
-//   );
-// }
+export default function DropdownMenu({ items = [] }: Props) {
+  return (
+    <div className="headerMenue1 headerMenueBg1 customeSmallText invisible top-full mt-2 flex flex-col opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+      <ul>
+        {items.map((item) => {
+          const hasMega = !!megaSubMenu[item.name];
+
+          return (
+            <li key={item.name} className="">
+              <Link
+                href={item.href}
+                className="headerMenueItem header-nav-right-link flex items-center justify-between"
+              >
+                {item.name}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
