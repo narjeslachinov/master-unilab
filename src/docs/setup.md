@@ -12,6 +12,7 @@ Class Management
 
 ``bash
 npm install clsx
+
 ```
 
 ---
@@ -32,6 +33,7 @@ Creating Variants for Components
 
 ``bash
 npm install class-variance-authority
+
 ```
 
 ---
@@ -58,7 +60,8 @@ File:
 "prettier-plugin-tailwindcss"
 ]
 }
-```
+
+````
 
 ---
 
@@ -71,12 +74,13 @@ File:
 
 }
 }
-```
+````
 
 Execution format:
 
 ``bash
 npm execution format
+
 ```
 
 ---
@@ -95,6 +99,7 @@ Install:
 
 ``bash
 npm install -D husky
+
 ```
 
 Enable:
@@ -177,3 +182,4 @@ expands: ["@commitlint/config-conventional"],
 ✅ Commitlint configured
 
 ✅ Persian font added
+````

@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  
+  /* main color */
+  --primary:   #024a71; 
+
+  /* secondary:*/
+
+  --secondary: #393939; 
+  --accent-1:  #6896f9; 
+  --accent-2:  #9EF7E1; 
+
+  /* text color */
+  --text-light: #FFFFFF;  
+  --text-dark: #32363b;  
+  --text-gray-1: #a4a4a4;   
+  --text-gray-2: #717070;   
+
+  /* background color*/
+  --background-neutral-1: #f6f6f6;
+  --background-neutral-2: #d8d7cd;
+  --background-neutral-3: #fbfbfb;
+
+  /* Radius */
+  --main-radius: 1.2rem;
+
+  /* Shadows */
+  --main-inset-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
