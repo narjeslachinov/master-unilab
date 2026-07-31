@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MegaSubMenuCategory } from "../../type/header.type";
+import { MegaSubMenuCategory } from "../type/header.type";
 
 type Props = {
   section: MegaSubMenuCategory;

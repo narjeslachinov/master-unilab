@@ -5,8 +5,8 @@ import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft01Icon } from "@hugeicons/core-free-icons";
 
-import { SubMenuItem } from "../../type/header.type";
-import { megaSubMenu } from "../../data/header.data";
+import { SubMenuItem } from "../type/header.type";
+import { megaSubMenu } from "../data/header.data";
 import MegaMenu from "./MegaMenu";
 
 type Props = {

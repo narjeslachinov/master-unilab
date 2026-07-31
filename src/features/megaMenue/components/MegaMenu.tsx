@@ -1,6 +1,6 @@
-import MegaMenuColumn from "./MegaMenuColumn";
-import { MegaSubMenuCategory } from "../../type/header.type";
+import { MegaSubMenuCategory } from "../type/header.type";
 import { cn } from "@/lib/utils";
+import MegaMenuColumn from "./MegaMenuColumn";
 
 type Props = {
   sections: MegaSubMenuCategory[];

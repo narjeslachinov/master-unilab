@@ -45,7 +45,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
         <div className="relative">
           {startIcon && (
-            <span className="text-gray-1 pointer-events-none absolute inset-y-0 right-3 flex items-center">
+            <span className="text-gray-3 pointer-events-none absolute inset-y-0 right-3 flex items-center">
               {startIcon}
             </span>
           )}

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import {
@@ -18,18 +18,42 @@ export default function HeaderActions({
   openWishlist,
 }: Props) {
   return (
-    <div className="flex gap-4">
-      <Button onClick={openWishlist}>
-        <HugeiconsIcon aria-hidden size={20} icon={FavouriteIcon} />
-      </Button>
+    <div className="flex gap-3">
+      <button
+        onClick={openWishlist}
+        className="headerIcon cursor-pointer transition"
+      >
+        <HugeiconsIcon
+          aria-hidden
+          size={22}
+          icon={FavouriteIcon}
+          strokeWidth={2.5}
+        />
+      </button>
 
-      <Button onClick={openCart}>
-        <HugeiconsIcon aria-hidden size={20} icon={ShoppingCart02Icon} />
-      </Button>
+      <button
+        onClick={openCart}
+        className="headerIcon cursor-pointer transition"
+      >
+        <HugeiconsIcon
+          aria-hidden
+          size={22}
+          icon={ShoppingCart02Icon}
+          strokeWidth={2.5}
+        />
+      </button>
 
-      <Button onClick={openAuth}>
-        <HugeiconsIcon aria-hidden size={20} icon={User03Icon} />
-      </Button>
+      <button
+        onClick={openAuth}
+        className="headerIcon cursor-pointer transition"
+      >
+        <HugeiconsIcon
+          aria-hidden
+          size={22}
+          icon={User03Icon}
+          strokeWidth={2.5}
+        />
+      </button>
     </div>
   );
 }

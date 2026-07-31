@@ -1,6 +1,7 @@
 export interface SubMenuItem {
   name: string;
   href: string;
+  className?: string;
 }
 
 export interface MenuItem {
@@ -8,10 +9,3 @@ export interface MenuItem {
   href: string;
   subMenu?: SubMenuItem[];
 }
-
-export type MegaSubMenuCategory = {
-  name: string;
-  items: SubMenuItem[];
-};
-
-export type MegaSubMenu = Record<string, MegaSubMenuCategory[]>;

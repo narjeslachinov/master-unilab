@@ -3,8 +3,6 @@
 @import "../styles/tokens.css";
 
 @theme {
-  --color-*: initial;
-
   --color-primary: var(--primary);
 
   --color-secondary: var(--secondary);
@@ -54,7 +52,7 @@
 /* ====== Heading Styles ====== */
 .heading {
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--primary);
   line-height: 1.3;
 }
 
@@ -80,7 +78,7 @@
 
 .heading6 {
   font-size: clamp(0.785rem, 1.5vw, 0.875rem);
-  color: var(--secondary-color);
+  color: var(--secondary);
 }
 
 .customeSmallText {
@@ -89,24 +87,6 @@
   font-size: clamp(0.7rem, 2.2vw, 0.9rem);
 }
 
-/* .custome-link {
-  color: var(--text-light);
-  background-color: var(--primary-color);
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  border: solid 2px var(--primary-color);
-  transition: all 0.4s ease;
-  font-weight: 400;
-  line-height: 1.4;
-  font-size: clamp(0.7rem, 2.2vw, 0.9rem);
-}
-.custome-link:hover {
-  color: var(--primary-color);
-  background-color: var(--background-neutral);
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  border: solid 2px var(--primary-color);
-} */
 .glassBg1 {
   background-color: var(--color-glass-1);
   backdrop-filter: blur(25px) saturate(180%);
@@ -136,8 +116,8 @@
 /* === Swiper Navigation Custom Style === */
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: var(--secondary-color) !important;
-  color: var(--text-light) !important;
+  background-color: var(--secondary) !important;
+  color: var(--light) !important;
   width: 30px !important;
   height: 30px !important;
   border-radius: 20%;
@@ -158,12 +138,12 @@
 .swiper-pagination-bullet {
   width: 10px !important;
   height: 10px !important;
-  background-color: var(--background-neutral2) !important;
+  background-color: var(--neutral2) !important;
   border-radius: 3px !important;
   transition: all 0.3s ease;
 }
 .swiper-pagination-bullet-active {
-  background-color: var(--primary-color) !important;
+  background-color: var(--primary) !important;
   height: 30px !important;
   transform: scale(1.002);
 }
@@ -173,26 +153,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-neutral); /* رنگ پس‌زمینه ریل */
+  background: var(--neutral); /* رنگ پس‌زمینه ریل */
   border-radius: 5px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color); /* رنگ خود اسکرول */
+  background-color: var(--primary); /* رنگ خود اسکرول */
   border-radius: 10px;
-  border: 3px solid var(--background-neutral); /* فاصله داخلی */
+  border: 3px solid var(--neutral); /* فاصله داخلی */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(
-    --secondary-color
-  ) !important; /* رنگ اسکرول هنگام هاور */
+  background-color: var(--secondary) !important; /* رنگ اسکرول هنگام هاور */
 }
 
 /* === Firefox === */
 * {
   scrollbar-width: auto; /* thin, auto, none */
-  scrollbar-color: var(--primary-color) var(--background-neutral); /* thumb track */
+  scrollbar-color: var(--primary) var(--neutral); /* thumb track */
 }
 .text-limit-1 {
   display: -webkit-box;
@@ -224,18 +202,17 @@ header {
   z-index: 99;
 }
 header .top-header {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+  background-color: var(--primary);
+  color: var(--light);
 }
 header .headerMenue1 {
-  color: var(--text-dark);
+  color: var(--dark);
 }
 header .headerMenue1 {
   position: absolute;
-  left: 50%;
+
   transform: translateX(-50%) translateY(-20px);
   top: 100%;
-  width: 10rem;
   margin-top: 0.5rem;
   padding-block: 0.5rem;
   z-index: 50;
@@ -315,7 +292,7 @@ header .headerMenueItem {
   transition: all 0.3s ease;
 }
 header .headerMenueItem:hover {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 header .header-nav-right-link {
   text-align: right;
@@ -333,11 +310,11 @@ header .header-nav-right-link::before,
 header .header-nav-left-link::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   width: 0;
   height: 1px;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   transition: all 0.3s ease;
 }
 header .header-nav-right-link::before {
@@ -352,14 +329,11 @@ header .header-nav-left-link::after {
 header .header-nav-left-link:hover::after {
   width: 0.5rem;
 }
-header .headerNavLink:hover {
-  color: var(--primary-color);
-}
 header .headerIcon {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 header .headerIcon:hover {
-  color: var(--secondary-color);
+  color: var(--secondary);
   scale: 1.08;
 }
 /* انیمیشن پدیدار شدن زیرمنوی روبه‌رو */
@@ -403,32 +377,32 @@ header .headerIcon:hover {
 }
 /* breadcrumb */
 .breadcrumb .breadcrumb-item {
-  color: var(--text-gray);
+  color: var(--gray-2);
 }
 .breadcrumb .breadcrumb-current {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 /*ProductCategoriesSection*/
 .ProductCategoriesSection {
-  background-color: var(--background-neutral2);
+  background-color: var(--neutral2);
   border-radius: var(--main-border-radius);
 }
 .ProductCategoriesSection .productTag {
-  background-color: var(--secondary-color);
-  color: var(--text-light);
+  background-color: var(--secondary);
+  color: var(--light);
 }
 .ProductCategoriesSection .product-info {
-  color: var(--text-dark);
+  color: var(--dark);
 }
 .ProductCategoriesSection .categoriesBtn {
-  color: var(--text-gray);
+  color: var(--gray-2);
   transition: all 0.4s ease;
   font-size: clamp(0.875rem, 2.5vw, 1.1rem);
 }
 .ProductCategoriesSection .activeCategoriesBtn {
   transition: all 0.4s ease;
-  color: var(--secondary-color);
+  color: var(--secondary);
   font-weight: bold;
   font-size: clamp(0.875rem, 2.5vw, 1.1rem);
 }
@@ -479,21 +453,21 @@ header .headerIcon:hover {
 }
 
 .ServicesSection .ServicesIcon {
-  color: var(--secondary-color);
+  color: var(--secondary);
 }
 
 .article-heading {
-  color: var(--secondary-color);
+  color: var(--secondary);
 }
 .article-heading:hover {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 .article-underline {
-  background-color: var(--primary-color);
+  background-color: var(--primary);
 }
 .custom-footer {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+  background-color: var(--primary);
+  color: var(--light);
   padding: 1.5rem;
   text-align: center;
 }
@@ -507,11 +481,11 @@ header .headerIcon:hover {
 }
 
 .footer-links a {
-  color: var(--text-light);
+  color: var(--light);
   transition: color 0.3s ease;
 }
 .footer-links a:hover {
-  color: var(--accent-color-1);
+  color: var(--accent-1);
 }
 
 .footer-icons {
@@ -521,7 +495,7 @@ header .headerIcon:hover {
 }
 
 .footer-icons a {
-  color: var(--accent-color-1);
+  color: var(--accent--1);
   transition:
     color 0.3s ease,
     transform 0.3s ease;
@@ -531,7 +505,7 @@ header .headerIcon:hover {
   transform: scale(1.1);
 }
 .footer-copy {
-  color: var(--background-neutral3);
+  color: var(--neutral3);
   font-size: 0.75rem;
   margin-top: 1rem;
 }

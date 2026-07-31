@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import TopBar from "./TopBar";
-// import DesktopHeader from "../components/desktop/DesktopHeader";
+import TopBar from "./shared/TopBar";
+import DesktopHeader from "./desktop/DesktopHeader";
 // import MobileBottomNav from "./MobileBottomNav";
 // import MobileMenu from "@/components/common/MobileMenu";
 
@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="w-full shadow-sm">
       <TopBar />
-      {/* 
+
       <DesktopHeader
         setMenuOpen={setMenuOpen}
         setAuthOpen={setAuthOpen}
@@ -26,7 +26,7 @@ export default function Header() {
         setWishlistOpen={setWishlistOpen}
       />
 
-          <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      {/*          <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <MobileBottomNav
         setMenuOpen={setMenuOpen}

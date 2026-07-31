@@ -15,7 +15,7 @@ export const inputVariants = cva(
 
     "placeholder:text-gray-2",
 
-    "focus:ring-2",
+    "focus:ring-1",
 
     "focus:ring-accent-1",
 

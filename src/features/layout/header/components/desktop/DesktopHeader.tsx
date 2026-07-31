@@ -1,24 +1,37 @@
-// import Logo from "../shared/Logo";
-// import SearchBox from "../shared/SearchBox";
-// import HeaderActions from "../shared/HeaderActions";
-// import DesktopMenu from "./DesktopMenu";
+import Logo from "../shared/Logo";
+import SearchBox from "../shared/SearchBox";
+import HeaderActions from "../shared/HeaderActions";
+import Menu from "./Menu";
+import { Container } from "@/components/ui/Container";
 
-// export default function DesktopHeader(props: any) {
-//   return (
-//     <div className="container flex items-center justify-between py-4">
-//       <Logo />
+type Props = {
+  setCartOpen: () => void;
+  setAuthOpen: () => void;
+  setWishlistOpen: () => void;
+};
 
-//       <DesktopMenu />
+export default function DesktopHeader({
+  setCartOpen,
+  setAuthOpen,
+  setWishlistOpen,
+}: Props) {
+  return (
+    <Container>
+      <div className="flex items-center justify-between py-4">
+        <Logo />
 
-//       <div className="flex gap-4">
-//         <SearchBox />
+        <Menu />
 
-//         <HeaderActions
-//           openCart={props.setCartOpen}
-//           openAuth={props.setAuthOpen}
-//           openWishlist={props.setWishlistOpen}
-//         />
-//       </div>
-//     </div>
-//   );
-// }
+        <div className="flex gap-4">
+          <SearchBox />
+
+          <HeaderActions
+            openCart={setCartOpen}
+            openAuth={setAuthOpen}
+            openWishlist={setWishlistOpen}
+          />
+        </div>
+      </div>
+    </Container>
+  );
+}
