@@ -11,7 +11,7 @@ type Props = {
 export default function DesktopHeader({ setAuthOpen }: Props) {
   return (
     <Container>
-      <div className="flex items-center justify-between py-4">
+      <div className="flex items-center justify-between py-3">
         <Logo />
 
         <Menu />

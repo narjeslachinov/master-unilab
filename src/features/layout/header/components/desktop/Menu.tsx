@@ -6,7 +6,7 @@ export default function Menu() {
     <nav>
       <ul className="hidden items-center gap-8 lg:flex">
         {menuItems.map((item) => (
-          <MenuItem key={item.name} item={item} />
+          <MenuItem key={item.id} item={item} />
         ))}
       </ul>
     </nav>

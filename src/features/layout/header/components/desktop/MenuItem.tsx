@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { MenuItem as MenuItemType } from "../../type/header.type";
-import DropDown from "./DropdownMenu";
-import SubMenu from "@/features/megaMenue/components/SubMenu";
+import { megaMenu } from "../../data/header.data";
+import DropdownMenu from "./DropdownMenu";
+import MegaMenu from "../megaMenue/MegaMenu";
 
 type Props = {
   item: MenuItemType;
@@ -18,13 +19,11 @@ export default function MenuItem({ item }: Props) {
         <span className="bg-primary absolute bottom-0 left-0 h-0.5 w-0 transition-all group-hover:w-full" />
       </Link>
 
-      {item.subMenu && <DropDown items={item.subMenu} />}
-      {/* {item.subMenu &&
-        (item.name === "دسته بندی" ? (
-          <SubMenu items={item.subMenu} />
-        ) : (
-          <DropDown items={item.subMenu} />
-        ))} */}
+      {item.megaMenuKey && megaMenu[item.megaMenuKey] ? (
+        <MegaMenu sections={megaMenu[item.megaMenuKey]} />
+      ) : item.children ? (
+        <DropdownMenu items={item.children} />
+      ) : null}
     </li>
   );
 }
