@@ -1,4 +1,3 @@
-import { button } from "@/components/ui/button";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import {
@@ -6,21 +5,15 @@ import {
   ShoppingCart02Icon,
   User03Icon,
 } from "@hugeicons/core-free-icons";
-interface Props {
-  openCart: () => void;
-  openAuth: () => void;
-  openWishlist: () => void;
-}
 
-export default function HeaderActions({
-  openCart,
-  openAuth,
-  openWishlist,
-}: Props) {
+interface Props {
+  openAuth: () => void;
+}
+export default function HeaderActions({ openAuth }: Props) {
   return (
     <div className="flex gap-3">
       <button
-        onClick={openWishlist}
+        onClick={openAuth}
         className="headerIcon cursor-pointer transition"
       >
         <HugeiconsIcon
@@ -32,7 +25,7 @@ export default function HeaderActions({
       </button>
 
       <button
-        onClick={openCart}
+        onClick={openAuth}
         className="headerIcon cursor-pointer transition"
       >
         <HugeiconsIcon

@@ -4,27 +4,20 @@ import { useState } from "react";
 
 import TopBar from "./shared/TopBar";
 import DesktopHeader from "./desktop/DesktopHeader";
+import AuthModal from "@/features/auth/components/AuthModal";
 // import MobileBottomNav from "./MobileBottomNav";
 // import MobileMenu from "@/components/common/MobileMenu";
 
 // import HeaderModals from "./HeaderModals";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
-  const [wishlistOpen, setWishlistOpen] = useState(false);
-
   return (
     <header className="w-full shadow-sm">
       <TopBar />
 
-      <DesktopHeader
-        setMenuOpen={setMenuOpen}
-        setAuthOpen={setAuthOpen}
-        setCartOpen={setCartOpen}
-        setWishlistOpen={setWishlistOpen}
-      />
+      <DesktopHeader setAuthOpen={() => setAuthOpen(true)} />
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
 
       {/*          <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 

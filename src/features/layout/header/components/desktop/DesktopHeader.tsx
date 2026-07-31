@@ -5,16 +5,10 @@ import Menu from "./Menu";
 import { Container } from "@/components/ui/Container";
 
 type Props = {
-  setCartOpen: () => void;
   setAuthOpen: () => void;
-  setWishlistOpen: () => void;
 };
 
-export default function DesktopHeader({
-  setCartOpen,
-  setAuthOpen,
-  setWishlistOpen,
-}: Props) {
+export default function DesktopHeader({ setAuthOpen }: Props) {
   return (
     <Container>
       <div className="flex items-center justify-between py-4">
@@ -25,11 +19,7 @@ export default function DesktopHeader({
         <div className="flex gap-4">
           <SearchBox />
 
-          <HeaderActions
-            openCart={setCartOpen}
-            openAuth={setAuthOpen}
-            openWishlist={setWishlistOpen}
-          />
+          <HeaderActions openAuth={setAuthOpen} />
         </div>
       </div>
     </Container>
