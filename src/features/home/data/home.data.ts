@@ -8,6 +8,7 @@ import {
   ServiceItem,
   Category,
   ProductsByCategory,
+  Brand,
 } from "../type/home.type";
 
 import {
@@ -184,3 +185,66 @@ export const products: ProductsByCategory = {
     },
   ],
 };
+
+export const brands: Brand[] = [
+  {
+    id: 1,
+    name: "Pyrex",
+    logo: glass,
+  },
+  {
+    id: 2,
+    name: "Merck",
+    logo: glass,
+  },
+  {
+    id: 3,
+    name: "Sigma-Aldrich",
+    logo: glass,
+  },
+  {
+    id: 4,
+    name: "Sartorius",
+    logo: glass,
+  },
+  {
+    id: 5,
+    name: "IKA",
+    logo: glass,
+  },
+  {
+    id: 6,
+    name: "Fisher Scientific",
+    logo: glass,
+  },
+  {
+    id: 7,
+    name: "Thermo Fisher",
+    logo: glass,
+  },
+  {
+    id: 8,
+    name: "Agilent",
+    logo: glass,
+  },
+  {
+    id: 9,
+    name: "Shimadzu",
+    logo: glass,
+  },
+  {
+    id: 10,
+    name: "Hanna",
+    logo: glass,
+  },
+  {
+    id: 11,
+    name: "Hanna",
+    logo: glass,
+  },
+  {
+    id: 12,
+    name: "Hanna",
+    logo: glass,
+  },
+];

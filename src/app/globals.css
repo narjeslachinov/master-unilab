@@ -502,11 +502,11 @@ header .headerIcon:hover {
     transform 0.3s ease;
 }
 .footer-icons a:hover {
-  color: var(--text-light);
+  color: var(--light);
   transform: scale(1.1);
 }
 .footer-copy {
-  color: var(--neutral3);
+  color: var(--neutral-3);
   font-size: 0.75rem;
   margin-top: 1rem;
 }

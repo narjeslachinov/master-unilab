@@ -31,3 +31,8 @@ export interface Product {
 }
 
 export type ProductsByCategory = Record<number, Product[]>;
+export interface Brand {
+  id: number;
+  name: string;
+  logo: StaticImageData | string;
+}

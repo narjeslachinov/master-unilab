@@ -17,7 +17,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </span>
 
       {/* Product Image */}
-      <div className="product-image h-40 w-full overflow-hidden rounded-t-2xl relative">
+      <div className="product-image relative h-40 w-full overflow-hidden rounded-t-2xl">
         <Image
           src={product.img}
           alt={product.name}
