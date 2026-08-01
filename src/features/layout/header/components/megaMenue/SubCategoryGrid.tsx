@@ -1,15 +1,15 @@
 import { MenuLink } from "../../type/header.type";
-import MegaMenuItem from "./MegaMenuItem";
+import SubCategoryColumn from "./SubCategoryColumn";
 
 type Props = {
   items: MenuLink[];
 };
 
-export default function MegaMenuList({ items }: Props) {
+export default function SubCategoryGrid({ items }: Props) {
   return (
     <ul className="flex w-full items-center justify-start gap-8">
       {items.map((item) => (
-        <MegaMenuItem key={item.href} item={item} />
+        <SubCategoryColumn key={item.href} item={item} />
       ))}
     </ul>
   );

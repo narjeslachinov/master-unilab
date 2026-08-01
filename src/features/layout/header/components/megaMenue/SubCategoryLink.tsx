@@ -5,7 +5,7 @@ type Props = {
   child: MenuLink;
 };
 
-export default function MegaMenuChild({ child }: Props) {
+export default function SubCategoryLink({ child }: Props) {
   return (
     <Link
       href={child.href}

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import MegaMenuChild from "./MegaMenuChild";
 import { MenuLink } from "../../type/header.type";
+import SubCategoryLink from "./SubCategoryLink";
 
 type Props = {
   item: MenuLink;
 };
 
-export default function MegaMenuItem({ item }: Props) {
+export default function SubCategoryColumn({ item }: Props) {
   return (
     <li className="flex w-full flex-col">
       <Link href={item.href}>
@@ -19,7 +19,7 @@ export default function MegaMenuItem({ item }: Props) {
         <ul className="mt-2 flex flex-col gap-2">
           {item.children.map((child) => (
             <li key={child.href}>
-              <MegaMenuChild child={child} />
+              <SubCategoryLink child={child} />
             </li>
           ))}
         </ul>

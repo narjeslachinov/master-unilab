@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 import { MenuLink } from "../../type/header.type";
-import MegaMenuList from "./MegaMenuList";
+import SubCategoryGrid from "./SubCategoryGrid";
 
 type Props = {
   items: MenuLink[];
   isOpen: boolean;
 };
 
-export default function MegaMenuContent({ items, isOpen }: Props) {
+export default function MegaMenuPanel({ items, isOpen }: Props) {
   return (
     <div
       className={cn(
@@ -15,7 +15,7 @@ export default function MegaMenuContent({ items, isOpen }: Props) {
         isOpen ? "animate-mega-in" : "animate-mega-out pointer-events-none",
       )}
     >
-      <MegaMenuList items={items} />
+      <SubCategoryGrid items={items} />
     </div>
   );
 }
