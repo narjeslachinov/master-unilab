@@ -1,11 +1,15 @@
 "use client";
 
+import HeroSlider from "@/features/home/components/heroSection/HeroSlider";
+import ServicesSection from "@/features/home/components/servicesSection/ServicesSection";
 import Header from "@/features/layout/header/components/header";
 
 export default function Home() {
   return (
     <main className="bg-neutral-1">
       <Header />
+      <HeroSlider />
+      <ServicesSection />
     </main>
   );
 }

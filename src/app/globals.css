@@ -139,7 +139,7 @@
 .swiper-pagination-bullet {
   width: 10px !important;
   height: 10px !important;
-  background-color: var(--neutral2) !important;
+  background-color: var(--neutral-2) !important;
   border-radius: 3px !important;
   transition: all 0.3s ease;
 }
