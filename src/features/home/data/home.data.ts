@@ -1,14 +1,22 @@
 import banner1 from "../assets/banner1.webp";
 import banner2 from "../assets/banner2.webp";
 import banner3 from "../assets/banner3.webp";
-import { Slide, ServiceItem } from "../type/home.type";
+import {
+  Slide,
+  ServiceItem,
+  Category,
+  ProductsByCategory,
+} from "../type/home.type";
 
 import {
   CheckmarkBadge03Icon,
   MicroscopeIcon,
+  NanoTechnologyIcon,
   PackageIcon,
   TestTube01Icon,
+  ToolsIcon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 export const slides: Slide[] = [
   {
     id: 1,
@@ -60,3 +68,75 @@ export const services: ServiceItem[] = [
     icon: PackageIcon,
   },
 ];
+
+export const categories: Category[] = [
+  {
+    id: 1,
+    name: "شیشه‌آلات",
+    icon: CheckmarkBadge03Icon,
+  },
+  {
+    id: 2,
+    name: "مواد شیمیایی",
+    icon: NanoTechnologyIcon,
+  },
+  {
+    id: 3,
+    name: "ابزار اپتیکی",
+    icon: MicroscopeIcon,
+  },
+  {
+    id: 4,
+    name: "تجهیزات",
+    icon: ToolsIcon,
+  },
+];
+
+export const products: ProductsByCategory = {
+  1: [
+    {
+      name: "شیشه بالن",
+      img: "/images/glass2.webp",
+      info: "شیشه مقاوم در برابر حرارت",
+      price: "۱۲,۰۰۰ تومان",
+      tag: "جدید",
+    },
+    {
+      name: "پیپت",
+      img: "/images/glass2.webp",
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+  ],
+
+  2: [
+    {
+      name: "اسید سولفوریک",
+      img: "/images/logo.jpg",
+      info: "محصول خالص با غلظت بالا",
+      price: "۲۵,۰۰۰ تومان",
+      tag: "ویژه",
+    },
+  ],
+
+  3: [
+    {
+      name: "میکروسکوپ نوری",
+      img: "/products/microscope.jpg",
+      info: "بزرگنمایی بالا",
+      price: "۱۵۰,۰۰۰ تومان",
+      tag: "ویژه",
+    },
+  ],
+
+  4: [
+    {
+      name: "سانتریفیوژ",
+      img: "/products/centrifuge.jpg",
+      info: "سرعت بالا",
+      price: "۳۰۰,۰۰۰ تومان",
+      tag: "ویژه",
+    },
+  ],
+};

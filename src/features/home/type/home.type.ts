@@ -15,3 +15,19 @@ export interface ServiceItem {
   description: string;
   icon: IconSvgElement;
 }
+
+export interface Category {
+  id: number;
+  name: string;
+  icon: IconSvgElement;
+}
+
+export interface Product {
+  name: string;
+  img: string;
+  info: string;
+  price: string;
+  tag: string;
+}
+
+export type ProductsByCategory = Record<number, Product[]>;
