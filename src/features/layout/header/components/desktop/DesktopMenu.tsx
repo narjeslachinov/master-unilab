@@ -1,5 +1,5 @@
 import { menuItems } from "../../data/header.data";
-import MenuItem from "./MenuItem";
+import MenuItem from "./DesktopMenuItem";
 
 export default function Menu() {
   return (

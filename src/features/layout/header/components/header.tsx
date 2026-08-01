@@ -12,11 +12,24 @@ import AuthModal from "@/features/auth/components/AuthModal";
 
 export default function Header() {
   const [authOpen, setAuthOpen] = useState(false);
+
+  const openAuth = () => setAuthOpen(true);
+
+  const openCart = () => {
+    console.log("Open Cart");
+  };
+
+  const openWishlist = () => {
+    console.log("Open Wishlist");
+  };
   return (
     <header className="w-full shadow-sm">
       <TopBar />
-
-      <DesktopHeader setAuthOpen={() => setAuthOpen(true)} />
+      <DesktopHeader
+        openAuth={openAuth}
+        openCart={openCart}
+        openWishlist={openWishlist}
+      />
       <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
 
       {/*          <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />

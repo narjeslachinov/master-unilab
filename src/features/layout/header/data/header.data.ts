@@ -1,4 +1,15 @@
-import { MenuItem, MegaMenu } from "../type/header.type";
+import {
+  FavouriteIcon,
+  ShoppingCart02Icon,
+  User03Icon,
+} from "@hugeicons/core-free-icons";
+import {
+  MenuItem,
+  MegaMenu,
+  GetHeaderActionsProps,
+  HeaderAction,
+  language,
+} from "../type/header.type";
 
 export const menuItems: MenuItem[] = [
   {
@@ -208,3 +219,49 @@ export const megaMenu: MegaMenu = {
     },
   ],
 };
+
+export const getHeaderActions = ({
+  openAuth,
+  openCart,
+  openWishlist,
+}: GetHeaderActionsProps): HeaderAction[] => [
+  {
+    id: 1,
+    name: "wishlist",
+    icon: FavouriteIcon,
+    onClick: openWishlist,
+  },
+  {
+    id: 2,
+    name: "cart",
+    icon: ShoppingCart02Icon,
+    onClick: openCart,
+  },
+  {
+    id: 3,
+    name: "auth",
+    icon: User03Icon,
+    onClick: openAuth,
+  },
+];
+
+export const languages: language[] = [
+  {
+    id: 1,
+    code: "FA",
+    label: "🇮🇷 فارسی",
+    className: "header-nav-right-link",
+  },
+  {
+    id: 2,
+    code: "AR",
+    label: "🇸🇦 العربية",
+    className: "header-nav-right-link",
+  },
+  {
+    id: 3,
+    code: "EN",
+    label: "🇬🇧 English",
+    className: "header-nav-left-link",
+  },
+];

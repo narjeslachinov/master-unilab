@@ -3,27 +3,11 @@
 import { useState } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { LatitudeIcon } from "@hugeicons/core-free-icons";
+import { languages } from "../../data/header.data";
+import { language } from "../../type/header.type";
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher(props: language) {
   const [lang, setLang] = useState("FA");
-
-  const languages = [
-    {
-      code: "FA",
-      label: "🇮🇷 فارسی",
-      className: "header-nav-right-link",
-    },
-    {
-      code: "AR",
-      label: "🇸🇦 العربية",
-      className: "header-nav-right-link",
-    },
-    {
-      code: "EN",
-      label: "🇬🇧 English",
-      className: "header-nav-left-link",
-    },
-  ];
 
   return (
     <div className="group relative">

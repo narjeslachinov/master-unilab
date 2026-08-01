@@ -17,7 +17,7 @@ export default function CategoryList({
     <ul className="space-y-2">
       {sections.map((section) => (
         <CategoryItem
-          key={section.name}
+          key={section.id}
           section={section}
           isOpen={openMega === section.name}
           onOpen={() => setOpenMega(section.name)}
