@@ -1,6 +1,8 @@
 import banner1 from "../assets/banner1.webp";
 import banner2 from "../assets/banner2.webp";
 import banner3 from "../assets/banner3.webp";
+import glass from "../assets/glass2.webp";
+
 import {
   Slide,
   ServiceItem,
@@ -16,7 +18,7 @@ import {
   TestTube01Icon,
   ToolsIcon,
 } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+
 export const slides: Slide[] = [
   {
     id: 1,
@@ -96,15 +98,57 @@ export const products: ProductsByCategory = {
   1: [
     {
       name: "شیشه بالن",
-      img: "/images/glass2.webp",
+      img: glass,
       info: "شیشه مقاوم در برابر حرارت",
       price: "۱۲,۰۰۰ تومان",
       tag: "جدید",
     },
     {
       name: "پیپت",
-      img: "/images/glass2.webp",
+      img: glass,
       info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقیق مایعات",
+      price: "۸,۰۰۰ تومان",
+      tag: "پرفروش",
+    },
+    {
+      name: "پیپت",
+      img: glass,
+      info: "اندازه‌گیری دقازه‌گیری دقازه‌گیری دقازه‌گیری دقازه‌گیری دقازه‌گیری دقیق مایعات",
       price: "۸,۰۰۰ تومان",
       tag: "پرفروش",
     },

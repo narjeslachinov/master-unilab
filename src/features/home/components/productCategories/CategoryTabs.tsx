@@ -1,5 +1,6 @@
 "use client";
 
+import { HugeiconsIcon } from "@hugeicons/react";
 import { Category } from "../../type/home.type";
 
 interface CategoryTabsProps {
@@ -25,7 +26,8 @@ export default function CategoryTabs({
               : "categoriesBtn"
           }`}
         >
-          {category.icon}
+          <HugeiconsIcon icon={category.icon} size={20} />
+
           <span>{category.name}</span>
         </button>
       ))}

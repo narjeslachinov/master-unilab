@@ -1,6 +1,7 @@
 "use client";
 
 import HeroSlider from "@/features/home/components/heroSection/HeroSlider";
+import ProductCategories from "@/features/home/components/productCategories/ProductCategories";
 import ServicesSection from "@/features/home/components/servicesSection/ServicesSection";
 import Header from "@/features/layout/header/components/header";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <HeroSlider />
       <ServicesSection />
+      <ProductCategories />
     </main>
   );
 }

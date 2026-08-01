@@ -1,5 +1,7 @@
 "use client";
+import Image from "next/image";
 
+import { Button } from "@/components/ui/Button";
 import { Product } from "../../type/home.type";
 
 interface ProductCardProps {
@@ -15,10 +17,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       </span>
 
       {/* Product Image */}
-      <div className="product-image h-40 w-full overflow-hidden rounded-t-2xl">
-        <img
+      <div className="product-image h-40 w-full overflow-hidden rounded-t-2xl relative">
+        <Image
           src={product.img}
           alt={product.name}
+          fill
           className="h-full w-full transition-transform duration-500 hover:scale-105"
         />
       </div>
@@ -29,7 +32,9 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         <p className="customeSmallText text-limit-3 mb-2">{product.info}</p>
 
-        <p className="customeSmallText custome-link w-full">{product.price}</p>
+        <Button className="customeSmallText custome-link w-full">
+          {product.price}
+        </Button>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export interface Category {
 
 export interface Product {
   name: string;
-  img: string;
+  img: StaticImageData | string;
   info: string;
   price: string;
   tag: string;

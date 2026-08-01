@@ -386,8 +386,8 @@ header .headerIcon:hover {
 
 /*ProductCategoriesSection*/
 .ProductCategoriesSection {
-  background-color: var(--neutral2);
-  border-radius: var(--main-border-radius);
+  background-color: var(--neutral-2);
+  border-radius: var(--main-radius);
 }
 .ProductCategoriesSection .productTag {
   background-color: var(--secondary);
