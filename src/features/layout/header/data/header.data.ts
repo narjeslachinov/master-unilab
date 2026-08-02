@@ -20,7 +20,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 2,
-    name: "رباره ما",
+    name: "درباره ما",
     href: "/about",
   },
   {

@@ -479,45 +479,21 @@ header .headerIcon:hover {
 .article-underline {
   background-color: var(--primary);
 }
-.custom-footer {
-  background-color: var(--primary);
-  color: var(--light);
-  padding: 1.5rem;
-  text-align: center;
-}
 
 .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
   font-size: 0.9rem;
 }
 
-.footer-links a {
-  color: var(--light);
+.footer-links Link {
   transition: color 0.3s ease;
 }
-.footer-links a:hover {
-  color: var(--accent-1);
-}
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.footer-icons a {
-  color: var(--accent--1);
+.footer-icons Link {
   transition:
     color 0.3s ease,
     transform 0.3s ease;
 }
-.footer-icons a:hover {
-  color: var(--light);
-  transform: scale(1.1);
-}
+
 .footer-copy {
   color: var(--neutral-3);
   font-size: 0.75rem;

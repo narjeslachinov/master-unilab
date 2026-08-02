@@ -6,6 +6,7 @@ import BrandsSection from "@/features/home/components/brandSection/BrandsSection
 import HeroSlider from "@/features/home/components/heroSection/HeroSlider";
 import ProductCategories from "@/features/home/components/productCategories/ProductCategories";
 import ServicesSection from "@/features/home/components/servicesSection/ServicesSection";
+import Footer from "@/features/layout/footer/components/Footer";
 import Header from "@/features/layout/header/components/header";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <BrandsSection />
       <AboutUs />
       <ArticlesSection />
+      <Footer />
     </main>
   );
 }
