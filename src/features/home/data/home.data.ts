@@ -2,6 +2,9 @@ import banner1 from "../assets/banner1.webp";
 import banner2 from "../assets/banner2.webp";
 import banner3 from "../assets/banner3.webp";
 import glass from "../assets/glass2.webp";
+import meeting from "../assets/businesspeople-meeting-office-working.jpg";
+import discussion from "../assets/business-executives-having-discussion-digital-tablet.jpg";
+import untitled from "../assets/Untitled.jpg";
 
 import {
   Slide,
@@ -9,6 +12,8 @@ import {
   Category,
   ProductsByCategory,
   Brand,
+  AboutImage,
+  AboutStat,
 } from "../type/home.type";
 
 import {
@@ -246,5 +251,52 @@ export const brands: Brand[] = [
     id: 12,
     name: "Hanna",
     logo: glass,
+  },
+];
+
+export const aboutImages: AboutImage[] = [
+  {
+    id: 1,
+    src: meeting,
+    alt: "Lab 1",
+    className:
+      "absolute top-0 right-0 sm:right-5 w-1/3 h-6/8 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500 z-10",
+  },
+  {
+    id: 2,
+    src: untitled,
+    alt: "Lab 2",
+    className:
+      "absolute top-1/8 right-1/3 w-1/3 h-6/8 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition-transform duration-500 z-20",
+  },
+  {
+    id: 3,
+    src: discussion,
+    alt: "Lab 3",
+    className:
+      "absolute bottom-0 left-0 sm:left-5 w-1/3 h-6/8 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 z-30",
+  },
+];
+
+export const aboutStats: AboutStat[] = [
+  {
+    id: 1,
+    value: "10+",
+    title: "سال تجربه",
+  },
+  {
+    id: 2,
+    value: "500+",
+    title: "مشتری سازمانی",
+  },
+  {
+    id: 3,
+    value: "1000+",
+    title: "محصول فعال",
+  },
+  {
+    id: 4,
+    value: "20+",
+    title: "افتخارات و گواهی‌ها",
   },
 ];

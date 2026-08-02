@@ -52,6 +52,7 @@
 }
 body {
   font-family: var(--font-vazir);
+  color: var(--secondary);
 }
 
 h1,

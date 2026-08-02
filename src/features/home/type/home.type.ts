@@ -36,3 +36,15 @@ export interface Brand {
   name: string;
   logo: StaticImageData | string;
 }
+export interface AboutImage {
+  id: number;
+  src: StaticImageData | string;
+  alt: string;
+  className: string;
+}
+
+export interface AboutStat {
+  id: number;
+  value: string;
+  title: string;
+}

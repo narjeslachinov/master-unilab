@@ -1,5 +1,6 @@
 "use client";
 
+import AboutUs from "@/features/home/components/aboutUSection/AboutUs";
 import BrandsSection from "@/features/home/components/brandSection/BrandsSection";
 import HeroSlider from "@/features/home/components/heroSection/HeroSlider";
 import ProductCategories from "@/features/home/components/productCategories/ProductCategories";
@@ -14,6 +15,7 @@ export default function Home() {
       <ServicesSection />
       <ProductCategories />
       <BrandsSection />
+      <AboutUs />
     </main>
   );
 }
