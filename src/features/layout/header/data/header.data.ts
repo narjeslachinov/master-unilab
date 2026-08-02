@@ -14,7 +14,7 @@ import {
 export const menuItems: MenuItem[] = [
   {
     id: 1,
-    name: "سته بنی",
+    name: "دسته بندی",
     href: "/ProductsPage",
     megaMenuKey: "products",
   },

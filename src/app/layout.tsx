@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { iranSans } from "@/fonts/index";
+import { aviny, vazir } from "@/fonts/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${iranSans.variable} flex min-h-full flex-col`}>
+      <body
+        className={`${vazir.variable} ${aviny.variable} flex min-h-full flex-col`}
+      >
         {children}
       </body>
     </html>

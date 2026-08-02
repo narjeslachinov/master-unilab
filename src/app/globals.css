@@ -50,6 +50,18 @@
 
   --z-index-toast: var(--z-toast);
 }
+body {
+  font-family: var(--font-vazir);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-aviny);
+}
 /* ====== Heading Styles ====== */
 .heading {
   font-weight: 700;
