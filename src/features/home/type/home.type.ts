@@ -48,3 +48,11 @@ export interface AboutStat {
   value: string;
   title: string;
 }
+export interface Article {
+  id: number;
+  title: string;
+  date: string;
+  author: string;
+  image: StaticImageData | string;
+  href: string;
+}

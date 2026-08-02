@@ -5,6 +5,7 @@ import glass from "../assets/glass2.webp";
 import meeting from "../assets/businesspeople-meeting-office-working.jpg";
 import discussion from "../assets/business-executives-having-discussion-digital-tablet.jpg";
 import untitled from "../assets/Untitled.jpg";
+import article from "../assets/laboratoryComposition.jpg";
 
 import {
   Slide,
@@ -14,6 +15,7 @@ import {
   Brand,
   AboutImage,
   AboutStat,
+  Article,
 } from "../type/home.type";
 
 import {
@@ -298,5 +300,65 @@ export const aboutStats: AboutStat[] = [
     id: 4,
     value: "20+",
     title: "افتخارات و گواهی‌ها",
+  },
+];
+
+export const articles: Article[] = [
+  {
+    id: 1,
+    title: "نوآوری در تجهیزات آزمایشگاهی مدرن",
+    date: "2025-10-07",
+    author: "دکتر حسینی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 2,
+    title: "راهنمای استفاده از مواد شیمیایی با ایمنی کامل",
+    date: "2025-09-30",
+    author: "مهندس کریمی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 3,
+    title: "چگونه آزمایشگاه خود را به‌روز نگه داریم",
+    date: "2025-09-25",
+    author: "دکتر رضایی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 4,
+    title: "مقایسه تجهیزات اپتیکی برای تحقیقات دقیق",
+    date: "2025-09-20",
+    author: "مهندس احمدی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 5,
+    title: "مقایسه تجهیزات اپتیکی برای تحقیقات دقیق",
+    date: "2025-09-20",
+    author: "مهندس احمدی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 6,
+    title:
+      "مقایسه تجهیزات اپتیکی برای تحقیقات دقایسه تجهیزات اپتیکی برای تحقیقات دقایسه تجهیزات اپتیکی برای تحقیقات دقایسه تجهیزات اپتیکی برای تحقیقات دقیق",
+    date: "2025-09-20",
+    author: "مهندس احمدی",
+    image: article,
+    href: "#",
+  },
+  {
+    id: 7,
+    title: "مقایسه تجهیزات اپتیکی برای تحقیقات دقیق",
+    date: "2025-09-20",
+    author: "مهندس احمدی",
+    image: article,
+    href: "#",
   },
 ];
