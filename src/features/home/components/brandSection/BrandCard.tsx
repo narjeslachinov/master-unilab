@@ -7,9 +7,7 @@ interface BrandCardProps {
   brand: Brand;
 }
 
-export default function BrandCard({
-  brand,
-}: BrandCardProps) {
+export default function BrandCard({ brand }: BrandCardProps) {
   return (
     <div className="flex items-center justify-center">
       <div className="flex h-32 w-full items-center justify-center">
@@ -18,7 +16,6 @@ export default function BrandCard({
           alt={brand.name}
           className="h-full w-full object-contain"
         />
-
       </div>
     </div>
   );

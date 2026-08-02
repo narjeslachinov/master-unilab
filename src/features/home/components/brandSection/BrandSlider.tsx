@@ -12,9 +12,7 @@ interface BrandSliderProps {
   brands: Brand[];
 }
 
-export default function BrandSlider({
-  brands,
-}: BrandSliderProps) {
+export default function BrandSlider({ brands }: BrandSliderProps) {
   return (
     <Swiper
       modules={[Autoplay]}

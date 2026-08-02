@@ -19,7 +19,7 @@ export default function ProductCategories() {
       <section className="ProductCategoriesSection my-10 px-5 pt-10 xl:px-10">
         <div className="mx-auto lg:px-4">
           {/* Header */}
-          <div className="gap-3 flex flex-col items-center justify-between sm:flex-row">
+          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
             <div className="space-y-3">
               <h2 className="heading heading1">دسته‌بندی محصولات</h2>
 
