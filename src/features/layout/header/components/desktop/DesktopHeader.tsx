@@ -1,6 +1,6 @@
 import Logo from "../shared/Logo";
 import SearchBox from "./SearchBox";
-import HeaderActions from "./HeaderActions";
+import HeaderActions from "../shared/HeaderActions";
 import Menu from "./DesktopMenu";
 import { Container } from "@/components/ui/Container";
 

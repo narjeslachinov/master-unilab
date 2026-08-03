@@ -13,7 +13,7 @@ export default function AboutUs() {
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <AboutImages />
 
-          <div className="order-1 flex flex-col justify-center md:gap-3 text-justify lg:order-2">
+          <div className="order-1 flex flex-col justify-center text-justify md:gap-3 lg:order-2">
             <h2 className="heading heading1">درباره یونی‌لب</h2>
 
             <p className="">

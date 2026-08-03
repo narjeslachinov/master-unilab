@@ -12,7 +12,7 @@ import HeroSlide from "./HeroSlide";
 
 export default function HeroSlider() {
   return (
-    <section className="relative h-96 w-full md:h-128">
+    <section className="relative h-68 w-full md:h-96 xl:h-128">
       <Swiper
         direction="vertical"
 

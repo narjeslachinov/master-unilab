@@ -6,6 +6,7 @@ import TopBar from "./shared/TopBar";
 import DesktopHeader from "./desktop/DesktopHeader";
 import AuthModal from "@/features/auth/components/AuthModal";
 import MobileHeader from "./mobile/MobileHeader";
+import WishlistModal from "@/features/wishlistModal/components/WishlistModal";
 // import MobileMenu from "./mobile/MobileMenu";
 // import MobileBottomNav from "./MobileBottomNav";
 // import MobileMenu from "@/components/common/MobileMenu";
@@ -14,16 +15,16 @@ import MobileHeader from "./mobile/MobileHeader";
 
 export default function Header() {
   const [authOpen, setAuthOpen] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
 
   const openAuth = () => setAuthOpen(true);
+  const openWishlist = () => setWishlistOpen(true);
 
   const openCart = () => {
     console.log("Open Cart");
   };
 
-  const openWishlist = () => {
-    console.log("Open Wishlist");
-  };
+
   const openMenu = () => {
     console.log("Open Cart");
   };
@@ -32,21 +33,25 @@ export default function Header() {
     console.log("Open Wishlist");
   };
   return (
-    <header className="w-full shadow-sm">
+    <header className="bg-neutral-2 fixed inset-x-0 top-0 h-28 w-full shadow-sm">
       <TopBar />
       <DesktopHeader
         openAuth={openAuth}
         openCart={openCart}
         openWishlist={openWishlist}
       />
-<MobileHeader
-  openAuth={openAuth}
-  openCart={openCart}
-  openWishlist={openWishlist}
-  openMenu={openMenu}
-  openSearch={openSearch}
-/>
+      <MobileHeader
+        openAuth={openAuth}
+        openCart={openCart}
+        openWishlist={openWishlist}
+        openMenu={openMenu}
+        openSearch={openSearch}
+      />
       <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
+        <WishlistModal
+  isOpen={wishlistOpen}
+  onClose={() => setWishlistOpen(false)}
+/>
 
       {/* 
   <MobileMenu        openAuth={openAuth}

@@ -8,7 +8,7 @@ export default function ServicesSection() {
   return (
     <Container>
       <section className="ServicesSection flex flex-col gap-8 md:gap-12">
-        <div className=" text-center">
+        <div className="text-center">
           <h2 className="heading heading1">خدمات یونی‌لب</h2>
 
           <p>
@@ -32,7 +32,7 @@ export default function ServicesSection() {
 
               <h2 className="heading heading5">{service.title}</h2>
 
-              <p className="text-sm mt-3 leading-relaxed">
+              <p className="mt-3 text-sm leading-relaxed">
                 {service.description}
               </p>
             </div>

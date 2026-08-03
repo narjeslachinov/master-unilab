@@ -1,9 +1,5 @@
-
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  Mail01Icon,
-  TelephoneIcon,
-} from "@hugeicons/core-free-icons";
+import { Mail01Icon, TelephoneIcon } from "@hugeicons/core-free-icons";
 
 import { Container } from "@/components/ui/Container";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -16,20 +12,12 @@ export default function TopBar() {
         <div className="flex items-center justify-between">
           <div className="header-top-right hidden items-center justify-between gap-4 md:flex">
             <div className="flex items-center gap-1">
-              <HugeiconsIcon
-                aria-hidden
-                size={18}
-                icon={TelephoneIcon}
-              />
+              <HugeiconsIcon aria-hidden size={18} icon={TelephoneIcon} />
               <span>۰۲۱-۱۲۳۴۵۶۷۸</span>
             </div>
 
             <div className="flex items-center gap-1">
-              <HugeiconsIcon
-                aria-hidden
-                size={18}
-                icon={Mail01Icon}
-              />
+              <HugeiconsIcon aria-hidden size={18} icon={Mail01Icon} />
               <span>info@unilab.ir</span>
             </div>
           </div>
@@ -44,4 +32,3 @@ export default function TopBar() {
     </div>
   );
 }
-

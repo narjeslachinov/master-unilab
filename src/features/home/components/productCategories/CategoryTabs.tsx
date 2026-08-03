@@ -1,4 +1,3 @@
-
 "use client";
 
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -17,16 +16,16 @@ export default function CategoryTabs({
   onChange,
 }: CategoryTabsProps) {
   return (
-    <div className="flex flex-wrap items-center justify-center  gap-4 xl:gap-5">
+    <div className="flex flex-wrap items-center justify-center gap-4 xl:gap-5">
       {categories.map((category) => (
         <button
           key={category.id}
           onClick={() => onChange(category.id)}
           className={cn(
-            "flex cursor-pointer flex-col items-center gap-2 rounded-full transition w-24",
+            "flex w-24 cursor-pointer flex-col items-center gap-2 rounded-full transition",
             activeCategory === category.id
               ? "activeCategoriesBtn"
-              : "categoriesBtn"
+              : "categoriesBtn",
           )}
         >
           <HugeiconsIcon icon={category.icon} size={20} />
@@ -37,4 +36,3 @@ export default function CategoryTabs({
     </div>
   );
 }
-

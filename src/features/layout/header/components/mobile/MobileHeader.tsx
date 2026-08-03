@@ -1,10 +1,7 @@
 "use client";
 
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  Menu01Icon,
-  Search01Icon,
-} from "@hugeicons/core-free-icons";
+import { Menu01Icon, Search01Icon } from "@hugeicons/core-free-icons";
 
 import { getHeaderActions } from "../../data/header.data";
 import { MobileBottomNavProps } from "../../type/header.type";
@@ -23,7 +20,7 @@ export default function MobileBottomNav({
   });
 
   return (
-    <div className="fixed right-2 bottom-2 left-2 z-40 flex justify-around rounded-full bg-white p-3 shadow-lg md:hidden">
+    <div className="fixed inset-x-2 bottom-2 z-40 flex justify-around rounded-full bg-white p-3 shadow-lg md:hidden">
       {/* Menu */}
       <button
         type="button"
