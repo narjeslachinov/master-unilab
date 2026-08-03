@@ -1,7 +1,6 @@
 import { WishlistItem } from "../type/wishlist.type";
 import glass from "../assets/glass2.webp";
 
-
 export const wishlistItems: WishlistItem[] = [
   {
     id: 1,
