@@ -5,6 +5,8 @@ import { useState } from "react";
 import TopBar from "./shared/TopBar";
 import DesktopHeader from "./desktop/DesktopHeader";
 import AuthModal from "@/features/auth/components/AuthModal";
+import MobileHeader from "./mobile/MobileHeader";
+// import MobileMenu from "./mobile/MobileMenu";
 // import MobileBottomNav from "./MobileBottomNav";
 // import MobileMenu from "@/components/common/MobileMenu";
 
@@ -22,6 +24,13 @@ export default function Header() {
   const openWishlist = () => {
     console.log("Open Wishlist");
   };
+  const openMenu = () => {
+    console.log("Open Cart");
+  };
+
+  const openSearch = () => {
+    console.log("Open Wishlist");
+  };
   return (
     <header className="w-full shadow-sm">
       <TopBar />
@@ -30,10 +39,21 @@ export default function Header() {
         openCart={openCart}
         openWishlist={openWishlist}
       />
+<MobileHeader
+  openAuth={openAuth}
+  openCart={openCart}
+  openWishlist={openWishlist}
+  openMenu={openMenu}
+  openSearch={openSearch}
+/>
       <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
 
-      {/*          <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-
+      {/* 
+  <MobileMenu        openAuth={openAuth}
+        openCart={openCart}
+        openWishlist={openWishlist}
+         /> */}
+      {/*          
       <MobileBottomNav
         setMenuOpen={setMenuOpen}
         setAuthOpen={setAuthOpen}

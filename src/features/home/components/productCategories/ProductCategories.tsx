@@ -16,14 +16,14 @@ export default function ProductCategories() {
 
   return (
     <Container>
-      <section className="ProductCategoriesSection my-10 px-5 pt-10 xl:px-10">
-        <div className="mx-auto lg:px-4">
+      <section className="ProductCategoriesSection p-5  md:p-8 xl:p-10">
+        <div className="mx-auto flex flex-col gap-6">
           {/* Header */}
-          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <div className="space-y-3">
+          <div className="flex flex-col items-center justify-between gap-5 sm:flex-row">
+            <div className="">
               <h2 className="heading heading1">دسته‌بندی محصولات</h2>
 
-              <p className="pb-4">
+              <p >
                 لوازم و تجهیزات آزمایشگاهی در گروه‌های متنوع
               </p>
             </div>

@@ -7,8 +7,8 @@ import BrandSlider from "./BrandSlider";
 export default function BrandsSection() {
   return (
     <Container>
-      <section className="relative space-y-10 py-18">
-        <div className="space-y-3 text-center">
+      <section className="relative flex flex-col md:gap-8">
+        <div className=" text-center">
           <h2 className="heading heading1">برندها و تأمین‌کنندگان معتبر</h2>
 
           <p>همکاری با معتبرترین برندهای جهانی در حوزه تجهیزات آزمایشگاهی</p>

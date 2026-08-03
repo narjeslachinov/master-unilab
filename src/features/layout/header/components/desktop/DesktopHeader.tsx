@@ -1,6 +1,6 @@
 import Logo from "../shared/Logo";
-import SearchBox from "../shared/SearchBox";
-import HeaderActions from "../shared/HeaderActions";
+import SearchBox from "./SearchBox";
+import HeaderActions from "./HeaderActions";
 import Menu from "./DesktopMenu";
 import { Container } from "@/components/ui/Container";
 
@@ -17,7 +17,7 @@ export default function DesktopHeader({
 }: Props) {
   return (
     <Container>
-      <div className="flex items-center justify-between py-3">
+      <div className="hidden items-center justify-between py-3 md:flex">
         <Logo />
 
         <Menu />

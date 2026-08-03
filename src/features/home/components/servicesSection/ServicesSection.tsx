@@ -7,8 +7,8 @@ import { HugeiconsIcon } from "@hugeicons/react";
 export default function ServicesSection() {
   return (
     <Container>
-      <section className="ServicesSection my-10 p-10">
-        <div className="space-y-5 pb-5 text-center">
+      <section className="ServicesSection flex flex-col gap-8 md:gap-12">
+        <div className=" text-center">
           <h2 className="heading heading1">خدمات یونی‌لب</h2>
 
           <p>
@@ -32,7 +32,7 @@ export default function ServicesSection() {
 
               <h2 className="heading heading5">{service.title}</h2>
 
-              <p className="customeSmallText mt-3 leading-relaxed">
+              <p className="text-sm mt-3 leading-relaxed">
                 {service.description}
               </p>
             </div>

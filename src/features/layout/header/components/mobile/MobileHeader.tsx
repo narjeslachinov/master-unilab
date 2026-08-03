@@ -1,36 +1,76 @@
-// import Logo from "../Shared/Logo";
-// import MobileMenuButton from "./MobileMenuButton";
+"use client";
 
-// interface Props{
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  Menu01Icon,
+  Search01Icon,
+} from "@hugeicons/core-free-icons";
 
-// openMenu:()=>void;
+import { getHeaderActions } from "../../data/header.data";
+import { MobileBottomNavProps } from "../../type/header.type";
 
-// }
+export default function MobileBottomNav({
+  openAuth,
+  openCart,
+  openWishlist,
+  openMenu,
+  openSearch,
+}: MobileBottomNavProps) {
+  const actions = getHeaderActions({
+    openAuth,
+    openCart,
+    openWishlist,
+  });
 
-// export default function MobileHeader({
-// openMenu
-// }:Props){
+  return (
+    <div className="fixed right-2 bottom-2 left-2 z-40 flex justify-around rounded-full bg-white p-3 shadow-lg md:hidden">
+      {/* Menu */}
+      <button
+        type="button"
+        onClick={openMenu}
+        className="headerIcon cursor-pointer transition"
+        aria-label="منو"
+      >
+        <HugeiconsIcon
+          aria-hidden
+          size={22}
+          icon={Menu01Icon}
+          strokeWidth={2.5}
+        />
+      </button>
 
-// return(
+      {/* Search */}
+      <button
+        type="button"
+        onClick={openSearch}
+        className="headerIcon cursor-pointer transition"
+        aria-label="جستجو"
+      >
+        <HugeiconsIcon
+          aria-hidden
+          size={22}
+          icon={Search01Icon}
+          strokeWidth={2.5}
+        />
+      </button>
 
-// <header
-// className="
-// md:hidden
-// flex
-// items-center
-// justify-between
-// p-4
-// "
-// >
-
-// <Logo/>
-
-// <MobileMenuButton
-// onClick={openMenu}
-// />
-
-// </header>
-
-// )
-
-// }
+      {/* Wishlist / Cart / Auth */}
+      {actions.map((action) => (
+        <button
+          key={action.id}
+          type="button"
+          onClick={action.onClick}
+          className="headerIcon cursor-pointer transition"
+          aria-label={action.name}
+        >
+          <HugeiconsIcon
+            aria-hidden
+            size={22}
+            icon={action.icon}
+            strokeWidth={2.5}
+          />
+        </button>
+      ))}
+    </div>
+  );
+}

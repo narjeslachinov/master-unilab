@@ -10,7 +10,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="product-card relative transform cursor-pointer overflow-hidden rounded-2xl border border-white/30 bg-white/20 shadow-lg backdrop-blur-md transition-transform hover:-translate-y-1">
+    <div className="product-card   relative transform cursor-pointer overflow-hidden rounded-2xl border border-white/30 bg-white/20 shadow-lg backdrop-blur-md transition-transform hover:-translate-y-1">
       {/* Product Tag */}
       <span className="productTag customeSmallText absolute top-3 left-3 z-10 rounded-full px-2 py-1">
         {product.tag}
@@ -27,12 +27,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Info */}
-      <div className="product-info text-light flex flex-col items-center p-3 text-center">
-        <h3 className="heading heading6 text-limit-2 mb-1">{product.name}</h3>
+      <div className="product-info text-light flex flex-col items-center gap-3 p-3 text-center overflow-hidden">
 
-        <p className="customeSmallText text-limit-3 mb-2">{product.info}</p>
+        <h3 className="heading6 text-limit-1 text-right">{product.name}</h3>
 
-        <Button className="customeSmallText custome-link w-full">
+        <p className="customeSmallText text-limit-3 text-right">{product.info}</p>
+
+        <Button className="customeSmallText  w-full">
           {product.price}
         </Button>
       </div>

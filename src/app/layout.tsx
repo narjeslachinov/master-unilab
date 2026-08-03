@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { aviny, vazir } from "@/fonts/index";
+import Header from "@/features/layout/header/components/header";
+import Footer from "@/features/layout/footer/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,9 @@ export default function RootLayout({
       <body
         className={`${vazir.variable} ${aviny.variable} flex min-h-full flex-col`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

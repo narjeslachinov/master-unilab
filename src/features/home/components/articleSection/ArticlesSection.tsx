@@ -7,8 +7,8 @@ import ArticleCard from "./ArticleCard";
 export default function ArticlesSection() {
   return (
     <Container>
-      <section className="my-16">
-        <div className="mb-12 text-center">
+      <section className="flex flex-col gap-8 md:gap-12">
+        <div className=" text-center">
           <h2 className="heading heading1">مقالات</h2>
 
           <p className="articles-subtitle">

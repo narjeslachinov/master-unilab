@@ -20,11 +20,6 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 2,
-    name: "درباره ما",
-    href: "/about",
-  },
-  {
-    id: 3,
     name: "محصولات",
     href: "/ProductsPage",
     children: [
@@ -52,33 +47,33 @@ export const menuItems: MenuItem[] = [
     ],
   },
   {
-    id: 4,
-    name: "خمات",
+    id: 3,
+    name: "مقالات",
     href: "/services",
     children: [
       {
         id: 1,
 
-        name: "خمت 1",
+        name: "مقالات 1",
         href: "/services/1",
         className: "header-nav-right-link",
       },
       {
         id: 2,
 
-        name: "خمت 2",
+        name: "مقالات 2",
         href: "/services/2",
         className: "header-nav-right-link",
       },
     ],
   },
   {
-    id: 5,
-    name: "مقالات",
-    href: "/ArticlesPage",
+    id: 4,
+    name: "درباره ما",
+    href: "/about",
   },
   {
-    id: 6,
+    id: 5,
     name: "تماس با ما",
     href: "/contact",
   },
@@ -212,19 +207,19 @@ export const getHeaderActions = ({
 }: GetHeaderActionsProps): HeaderAction[] => [
   {
     id: 1,
-    name: "wishlist",
+    name: "علاقمندی ها",
     icon: FavouriteIcon,
     onClick: openWishlist,
   },
   {
     id: 2,
-    name: "cart",
+    name: "سبد خرید",
     icon: ShoppingCart02Icon,
     onClick: openCart,
   },
   {
     id: 3,
-    name: "auth",
+    name: "حساب کاربری",
     icon: User03Icon,
     onClick: openAuth,
   },

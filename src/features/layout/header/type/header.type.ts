@@ -31,6 +31,11 @@ export interface GetHeaderActionsProps {
   openWishlist: () => void;
 }
 
+export interface MobileBottomNavProps extends GetHeaderActionsProps {
+  openMenu: () => void;
+  openSearch: () => void;
+}
+
 export interface HeaderAction {
   id: number;
   name: string;
