@@ -1,0 +1,55 @@
+import type { Product } from "../types/product.types";
+import glass from "../assets/glass2.webp";
+import banner2 from "../assets/banner1.webp";
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "پتری دیش 90mm",
+    price: 120000,
+    volume: "90mm",
+    brand: "Pyrex",
+    images: [glass],
+    category: "ظروف شیشه‌ای",
+    available: true,
+  },
+  {
+    id: 2,
+    name: "پیپت مدرج 10ml",
+    price: 80000,
+    volume: "10ml",
+    brand: "BrandTech",
+    images: [banner2, banner2],
+    category: "ابزار اندازه‌گیری",
+    available: false,
+  },
+  {
+    id: 3,
+    name: "بالن ته گرد 250ml",
+    price: 145000,
+    volume: "250ml",
+    brand: "Simax",
+    images: [banner2, banner2],
+    category: "ظروف شیشه‌ای",
+    available: true,
+  },
+  {
+    id: 4,
+    name: "ترازوی دیجیتال آزمایشگاهی",
+    price: 3500000,
+    volume: "-",
+    brand: "Kern",
+    images: [glass, banner2],
+    category: "تجهیزات عمومی",
+    available: true,
+  },
+  {
+    id: 5,
+    name: "بشر 100ml",
+    price: 60000,
+    volume: "100ml",
+    brand: "Pyrex",
+    images: [glass, banner2],
+    category: "ظروف شیشه‌ای",
+    available: false,
+  },
+];
