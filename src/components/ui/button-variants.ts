@@ -24,6 +24,8 @@ export const buttonVariants = cva(
 
     "disabled:pointer-events-none",
     "disabled:opacity-50",
+    "disabled:bg-secondary",
+    "disabled:border-0",
   ].join(" "),
   {
     variants: {

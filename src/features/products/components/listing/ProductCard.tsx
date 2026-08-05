@@ -112,20 +112,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         )}
 
-        <Button
-          className={cn(
-            "customeSmallText block w-full rounded-md py-1",
-            "transition-all duration-300",
-            !isAvailable && [
-              "cursor-not-allowed",
-              "border border-gray-400",
-              "text-gray bg-gray-100",
-            ],
-          )}
-          aria-disabled={!isAvailable}
-        >
-          مشاهده جزئیات
-        </Button>
+        {isAvailable ? (
+          <Button
+            asChild
+            className="customeSmallText block w-full rounded-md py-1"
+          >
+            <Link href={`/productDetails/${product.id}`}>مشاهده جزئیات</Link>
+          </Button>
+        ) : (
+          <Button
+            disabled
+            className="customeSmallText block w-full rounded-md py-1"
+          >
+            مشاهده جزئیات
+          </Button>
+        )}
       </div>
     </article>
   );

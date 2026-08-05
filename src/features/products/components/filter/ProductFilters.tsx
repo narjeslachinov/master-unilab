@@ -171,7 +171,7 @@ export default function ProductFilters({
             step={50_000}
             value={maxPrice}
             onChange={(event) => onMaxPriceChange(Number(event.target.value))}
-            className="text-accent-1 w-full"
+            className="w-full accent-sky-900"
           />
 
           <div className="text-gray mt-1 flex justify-between text-xs">
