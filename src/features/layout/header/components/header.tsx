@@ -18,10 +18,6 @@ export default function Header() {
   const openWishlist = () => setWishlistOpen(true);
   const openShoppingCart = () => setShoppingCartOpen(true);
 
-  const openCart = () => {
-    console.log("Open Cart");
-  };
-
   const openMenu = () => {
     console.log("Open Cart");
   };

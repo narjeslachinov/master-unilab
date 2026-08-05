@@ -21,7 +21,7 @@ export default function ProductFilterAccordion({
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between text-right text-sm font-semibold text-dark"
+        className="text-dark flex w-full items-center justify-between text-right text-sm font-semibold"
       >
         {title}
 

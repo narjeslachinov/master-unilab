@@ -59,10 +59,14 @@ export default function ProductFilters({
   };
 
   return (
-    <aside className="ProductFiltersSidebar w-full rounded-2xl border border-white/40 bg-white/30 p-4 shadow-lg backdrop-blur-md lg:w-1/4">
+    <aside className="ProductFiltersSidebar w-full rounded-2xl border border-white/40 bg-white/50 p-4 shadow-lg backdrop-blur-md lg:w-1/4">
       {/* Header */}
       <div className="text-primary flex items-center gap-2 font-bold">
-        <HugeiconsIcon icon={PreferenceHorizontalIcon} size={20}  />
+        <HugeiconsIcon
+          icon={PreferenceHorizontalIcon}
+          size={20}
+          strokeWidth={2}
+        />
 
         <h2 className="heading5">فیلتر محصولات</h2>
       </div>
@@ -113,7 +117,7 @@ export default function ProductFilters({
                 onClick={() => onVolumeToggle(volume)}
                 className={`rounded-full border px-3 py-1 text-xs transition ${
                   isSelected
-                    ? "border-primary bg-primary textLight"
+                    ? "border-primary bg-primary text-light"
                     : "text-gray border-gray-300 hover:border-sky-900"
                 }`}
               >
@@ -143,7 +147,7 @@ export default function ProductFilters({
                   type="checkbox"
                   checked={isSelected}
                   onChange={() => onBrandToggle(brand)}
-                  className="accent-sky-900"
+                  className="text-accent-1"
                 />
 
                 <span>{brand}</span>
@@ -167,7 +171,7 @@ export default function ProductFilters({
             step={50_000}
             value={maxPrice}
             onChange={(event) => onMaxPriceChange(Number(event.target.value))}
-            className="w-full accent-sky-900"
+            className="text-accent-1 w-full"
           />
 
           <div className="text-gray mt-1 flex justify-between text-xs">

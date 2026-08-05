@@ -31,8 +31,8 @@ export default function ProductsPage() {
 
   return (
     <Container>
-    <div className="py-16">
-      {/* <Breadcrumb
+      <div className="py-16">
+        {/* <Breadcrumb
         items={[
           {
             label: "خانه",
@@ -45,33 +45,32 @@ export default function ProductsPage() {
         ]}
       /> */}
 
-      <div className="mx-auto flex flex-col gap-8  lg:flex-row ">
-        <ProductFilters
-          categories={productFilterOptions.categories}
-          volumes={productFilterOptions.volumes}
-          brands={productFilterOptions.brands}
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-          selectedVolumes={selectedVolumes}
-          onVolumeToggle={toggleVolume}
-          selectedBrands={selectedBrands}
-          onBrandToggle={toggleBrand}
-          maxPrice={maxPrice}
-          onMaxPriceChange={setMaxPrice}
-        />
-
-        <section className="w-full lg:w-3/4">
-          <ProductsHeader
-            sortBy={sortBy}
-            onSortChange={setSortBy}
-            total={filteredProducts.length}
+        <div className="mx-auto flex flex-col gap-8 lg:flex-row">
+          <ProductFilters
+            categories={productFilterOptions.categories}
+            volumes={productFilterOptions.volumes}
+            brands={productFilterOptions.brands}
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+            selectedVolumes={selectedVolumes}
+            onVolumeToggle={toggleVolume}
+            selectedBrands={selectedBrands}
+            onBrandToggle={toggleBrand}
+            maxPrice={maxPrice}
+            onMaxPriceChange={setMaxPrice}
           />
 
-          <ProductsGrid products={filteredProducts} />
-        </section>
+          <section className="w-full lg:w-3/4">
+            <ProductsHeader
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+              total={filteredProducts.length}
+            />
+
+            <ProductsGrid products={filteredProducts} />
+          </section>
+        </div>
       </div>
-    </div>     
     </Container>
- 
   );
 }

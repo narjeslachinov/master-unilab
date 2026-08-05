@@ -1,4 +1,6 @@
 import { HugeiconsIcon } from "@hugeicons/react";
+import Select from "@/components/ui/Select";
+
 import { PreferenceHorizontalIcon } from "@hugeicons/core-free-icons";
 
 import type { ProductSortOption } from "../../types/product-filter.types";
@@ -8,7 +10,11 @@ interface ProductsHeaderProps {
   onSortChange: (value: ProductSortOption) => void;
   total: number;
 }
-
+const sortOptions = [
+  { value: "newest", label: "جدیدترین" },
+  { value: "priceLow", label: "قیمت: کم به زیاد" },
+  { value: "priceHigh", label: "قیمت: زیاد به کم" },
+];
 export default function ProductsHeader({
   sortBy,
   onSortChange,
@@ -25,7 +31,7 @@ export default function ProductsHeader({
         <label htmlFor="product-sort" className="text-gray">
           مرتب‌سازی بر اساس:
         </label>
-
+        {/* 
         <select
           id="product-sort"
           value={sortBy}
@@ -34,10 +40,18 @@ export default function ProductsHeader({
           }
           className="text-gray rounded-lg border px-2 py-1 focus:border-sky-900 focus:outline-none"
         >
-          <option value="newest">جدیدترین</option>
+          <option value="newest" >جدیدترین</option>
           <option value="priceLow">قیمت: کم به زیاد</option>
           <option value="priceHigh">قیمت: زیاد به کم</option>
-        </select>
+        </select> */}
+        <Select
+          id="product-sort"
+          value={sortBy}
+          onChange={(event) =>
+            onSortChange(event.target.value as ProductSortOption)
+          }
+          options={sortOptions}
+        />
       </div>
     </div>
   );

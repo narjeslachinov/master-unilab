@@ -1,14 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-
+import Link from "next/link";
 import { useState } from "react";
-import { HugeiconsIcon } from "@hugeicons/react";
 
+import { HugeiconsIcon } from "@hugeicons/react";
 import { ShoppingCart02Icon, ViewIcon } from "@hugeicons/core-free-icons";
-import type { Product } from "../../types/product.types";
+
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+
+import type { Product } from "../../types/product.types";
 
 interface ProductCardProps {
   product: Product;
@@ -27,23 +29,31 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-2xl border p-4 shadow-md transition-all duration-300 w-full ${
+      className={cn(
+        "group relative w-full overflow-hidden rounded-2xl border p-4 shadow-md transition-all duration-300",
+
         isAvailable
-          ? "border-white/40 bg-white/30 backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl"
-          : "border-gray-200 bg-gray-100 opacity-80"
-      }`}
+          ? [
+              "border-white/40 bg-white/30 backdrop-blur-md",
+              "hover:-translate-y-1 hover:shadow-2xl",
+            ]
+          : ["border-gray-200 bg-gray-100 opacity-80"],
+      )}
     >
       <div
         className="relative w-full"
         onMouseEnter={() => isAvailable && setCurrentImage(hoverImage)}
         onMouseLeave={() => isAvailable && setCurrentImage(mainImage)}
-      > 
+      >
         <Image
           src={currentImage}
           alt={product.name}
-          className={`h-48 w-full  transition-transform duration-500 ${
-            isAvailable ? "" : "grayscale"
-          }`}
+          width={400}
+          height={300}
+          className={cn(
+            "object-fit h-48 w-full transition-transform duration-500",
+            !isAvailable && "grayscale",
+          )}
         />
 
         {!isAvailable && (
@@ -53,11 +63,20 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         {isAvailable && (
-          <div className="absolute inset-0 flex items-center justify-center gap-3 bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
+          <div
+            className={cn(
+              "absolute inset-0 flex items-center justify-center gap-3",
+              "bg-black/30 opacity-0 transition-opacity",
+              "group-hover:opacity-100",
+            )}
+          >
             <Link
               href={`/productDetails/${product.id}`}
               aria-label={`مشاهده ${product.name}`}
-              className="text-primary rounded-full bg-white p-2 shadow-md transition hover:scale-110"
+              className={cn(
+                "bg-light rounded-full p-2 shadow-md",
+                "text-primary transition hover:scale-110",
+              )}
             >
               <HugeiconsIcon icon={ViewIcon} size={18} />
             </Link>
@@ -65,7 +84,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             <button
               type="button"
               aria-label={`افزودن ${product.name} به سبد خرید`}
-              className="bg-primary text-light rounded-full p-2 shadow-md transition hover:scale-110"
+              className={cn(
+                "bg-primary rounded-full p-2 shadow-md",
+                "text-light transition hover:scale-110",
+              )}
             >
               <HugeiconsIcon icon={ShoppingCart02Icon} size={18} />
             </button>
@@ -81,7 +103,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </p>
 
         {isAvailable ? (
-          <p className="text-primary customeSmallText mb-3 font-semibold">
+          <p className="customeSmallText text-primary mb-3 font-semibold">
             {product.price.toLocaleString()} تومان
           </p>
         ) : (
@@ -91,11 +113,15 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         <Button
-          className={`customeSmallText block w-full rounded-md py-1 transition-all duration-300 ${
-            isAvailable
-              ? "custome-link"
-              : "text-gray cursor-not-allowed border border-gray-400 bg-gray-100"
-          }`}
+          className={cn(
+            "customeSmallText block w-full rounded-md py-1",
+            "transition-all duration-300",
+            !isAvailable && [
+              "cursor-not-allowed",
+              "border border-gray-400",
+              "text-gray bg-gray-100",
+            ],
+          )}
           aria-disabled={!isAvailable}
         >
           مشاهده جزئیات
