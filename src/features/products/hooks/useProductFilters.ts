@@ -16,6 +16,30 @@ export function useProductFilters(products: Product[]) {
 
   const [sortBy, setSortBy] = useState<ProductSortOption>("newest");
 
+  /*
+    ساخت خودکار گزینه های فیلتر
+    از روی دیتای محصولات
+  */
+  const filterOptions = useMemo(() => {
+    const categories = [
+      "همه",
+      ...new Set(products.map((product) => product.category)),
+    ];
+
+    const volumes = [...new Set(products.map((product) => product.volume))];
+
+    const brands = [...new Set(products.map((product) => product.brand))];
+
+    return {
+      categories,
+      volumes,
+      brands,
+    };
+  }, [products]);
+
+  /*
+    اعمال فیلترها
+  */
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
       const matchesCategory =
@@ -42,6 +66,7 @@ export function useProductFilters(products: Product[]) {
           return b.price - a.price;
 
         case "newest":
+
         default:
           return b.id - a.id;
       }
@@ -56,39 +81,52 @@ export function useProductFilters(products: Product[]) {
   ]);
 
   const toggleVolume = (volume: string) => {
-    setSelectedVolumes((currentVolumes) => {
-      if (currentVolumes.includes(volume)) {
-        return currentVolumes.filter((item) => item !== volume);
+    setSelectedVolumes((current) => {
+      if (current.includes(volume)) {
+        return current.filter((item) => item !== volume);
       }
 
-      return [...currentVolumes, volume];
+      return [...current, volume];
     });
   };
 
   const toggleBrand = (brand: string) => {
-    setSelectedBrands((currentBrands) => {
-      if (currentBrands.includes(brand)) {
-        return currentBrands.filter((item) => item !== brand);
+    setSelectedBrands((current) => {
+      if (current.includes(brand)) {
+        return current.filter((item) => item !== brand);
       }
 
-      return [...currentBrands, brand];
+      return [...current, brand];
     });
   };
 
   return {
+    // گزینه های ساخته شده از دیتا
+    filterOptions,
+
+    // state ها
     selectedCategory,
+
     selectedVolumes,
+
     selectedBrands,
+
     maxPrice,
+
     sortBy,
 
+    // نتیجه نهایی
     filteredProducts,
 
+    // تغییر دهنده ها
     setSelectedCategory,
+
     setMaxPrice,
+
     setSortBy,
 
     toggleVolume,
+
     toggleBrand,
   };
 }

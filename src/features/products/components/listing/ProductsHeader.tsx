@@ -31,19 +31,7 @@ export default function ProductsHeader({
         <label htmlFor="product-sort" className="text-gray">
           مرتب‌سازی بر اساس:
         </label>
-        {/* 
-        <select
-          id="product-sort"
-          value={sortBy}
-          onChange={(event) =>
-            onSortChange(event.target.value as ProductSortOption)
-          }
-          className="text-gray rounded-lg border px-2 py-1 focus:border-sky-900 focus:outline-none"
-        >
-          <option value="newest" >جدیدترین</option>
-          <option value="priceLow">قیمت: کم به زیاد</option>
-          <option value="priceHigh">قیمت: زیاد به کم</option>
-        </select> */}
+
         <Select
           id="product-sort"
           value={sortBy}

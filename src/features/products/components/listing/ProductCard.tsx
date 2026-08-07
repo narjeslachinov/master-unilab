@@ -71,7 +71,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             )}
           >
             <Link
-              href={`/productDetails/${product.id}`}
+              href={`/product/${product.id}`}
               aria-label={`مشاهده ${product.name}`}
               className={cn(
                 "bg-light rounded-full p-2 shadow-md",
