@@ -1,21 +1,18 @@
 import { NextResponse } from "next/server";
 
-import { products } from "@/features/products/data/products.data";
-
+import { productDetails } 
+from "@/features/products/data/product-details.data";
 interface RouteContext {
   params: Promise<{
     id: string;
   }>;
 }
 
-export async function GET(
-  _request: Request,
-  { params }: RouteContext
-) {
+export async function GET(_request: Request, { params }: RouteContext) {
   const { id } = await params;
 
-  const product = products.find(
-    (product) => product.id === Number(id)
+  const product = productDetails.find(
+  (product)=> product.id === Number(id)
 );
 
   if (!product) {
@@ -25,7 +22,7 @@ export async function GET(
       },
       {
         status: 404,
-      }
+      },
     );
   }
 
