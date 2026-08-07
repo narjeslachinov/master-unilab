@@ -14,9 +14,7 @@ interface ProductsPageProps {
   products: Product[];
 }
 
-export default function ProductsPage({
-  products,
-}: ProductsPageProps) {
+export default function ProductsPage({ products }: ProductsPageProps) {
   const {
     filterOptions,
     selectedCategory,

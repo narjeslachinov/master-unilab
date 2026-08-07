@@ -1,17 +1,14 @@
 import type { Product } from "./product.types";
 
-
 export interface Feature {
   title: string;
   description: string;
 }
 
-
 export interface Specification {
   label: string;
   value: string;
 }
-
 
 export interface Download {
   id: number;
@@ -19,7 +16,6 @@ export interface Download {
   url: string;
   type: string;
 }
-
 
 export interface Review {
   id: number;
@@ -29,9 +25,7 @@ export interface Review {
   date: string;
 }
 
-
 export interface ProductDetail extends Product {
-
   description: string;
 
   features: Feature[];

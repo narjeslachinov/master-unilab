@@ -3,52 +3,116 @@ import type { Product } from "../types/product.types";
 import glass from "../assets/glass2.webp";
 import banner2 from "../assets/banner1.webp";
 
-
 export const products: Product[] = [
+  {
+    id: 1,
+    name: "پتری دیش 90mm",
+    price: 120000,
+    discount: 2,
+    volume: "90mm",
+    brand: "Pyrex",
+    images: [glass, banner2],
+    category: "ظروف شیشه‌ای",
+    available: true,
+    rating: 4.5,
+    reviewCount: 24,
+  },
 
-{
- id:1,
+  {
+    id: 2,
+    name: "پیپت مدرج 10ml",
+    price: 80000,
+    discount: 1,
+    volume: "10ml",
+    brand: "BrandTech",
+    images: [banner2],
+    category: "ابزار اندازه‌گیری",
+    available: false,
+    rating: 4,
+    reviewCount: 10,
+  },
 
- name:"پتری دیش 90mm",
+  {
+    id: 3,
+    name: "بالن ته گرد 250ml",
+    price: 145000,
+    discount: 5,
+    volume: "250ml",
+    brand: "Simax",
+    images: [glass, banner2],
+    category: "ظروف شیشه‌ای",
+    available: true,
+    rating: 4.7,
+    reviewCount: 15,
+  },
 
- price:120000,
+  {
+    id: 4,
+    name: "ترازوی دیجیتال آزمایشگاهی",
+    price: 3500000,
+    discount: 10,
+    volume: "-",
+    brand: "Kern",
+    images: [glass],
+    category: "تجهیزات عمومی",
+    available: true,
+    rating: 4.8,
+    reviewCount: 18,
+  },
 
- volume:"90mm",
+  {
+    id: 5,
+    name: "بشر 100ml",
+    price: 60000,
+    discount: 3,
+    volume: "100ml",
+    brand: "Pyrex",
+    images: [glass, banner2],
+    category: "ظروف شیشه‌ای",
+    available: false,
+    rating: 4.2,
+    reviewCount: 8,
+  },
 
- brand:"Pyrex",
+  {
+    id: 6,
+    name: "ارلن مایر 250ml",
+    price: 95000,
+    discount: 4,
+    volume: "250ml",
+    brand: "Simax",
+    images: [glass],
+    category: "ظروف شیشه‌ای",
+    available: true,
+    rating: 4.4,
+    reviewCount: 12,
+  },
 
- images:[glass,banner2],
+  {
+    id: 7,
+    name: "استوانه مدرج 100ml",
+    price: 110000,
+    discount: 6,
+    volume: "100ml",
+    brand: "Duran",
+    images: [banner2],
+    category: "ابزار اندازه‌گیری",
+    available: true,
+    rating: 4.6,
+    reviewCount: 14,
+  },
 
- category:"ظروف شیشه‌ای",
-
- available:true,
-
- rating:4.5,
-
- reviewCount:24,
-},
-
-
-{
- id:2,
-
- name:"پیپت مدرج 10ml",
-
- price:80000,
-
- volume:"10ml",
-
- brand:"BrandTech",
-
- images:[banner2],
-
- category:"ابزار اندازه‌گیری",
-
- available:false,
-
- rating:4,
-
- reviewCount:10,
-},
-
+  {
+    id: 8,
+    name: "لام شیشه‌ای میکروسکوپ",
+    price: 45000,
+    discount: 2,
+    volume: "Standard",
+    brand: "Marienfeld",
+    images: [glass],
+    category: "مصرفی آزمایشگاهی",
+    available: true,
+    rating: 4.3,
+    reviewCount: 9,
+  },
 ];

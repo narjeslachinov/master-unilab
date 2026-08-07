@@ -1,4 +1,9 @@
-import { getProduct } from "@/features/products/services/product.service";
+import ProductDetail from "@/features/products/components/detail/ProductDetail";
+
+import {
+  getProduct,
+  getRelatedProducts,
+} from "@/features/products/services/product.service";
 
 interface ProductDetailPageProps {
   params: Promise<{
@@ -11,16 +16,22 @@ export default async function ProductDetailPage({
 }: ProductDetailPageProps) {
   const { id } = await params;
 
-  const response = await getProduct(Number(id));
+  const productId = Number(id);
 
-  const product = response.data;
+  const [productResponse, relatedResponse] = await Promise.all([
+    getProduct(productId),
+    getRelatedProducts(productId),
+  ]);
+
+  const product = productResponse.data;
+  const relatedProducts = relatedResponse.data.items;
 
   return (
-    <main>
-        
-      <h1>{product.name}</h1>
-
-      <p>{product.description}</p>
+    <main className="bg-neutral-1 py-12 md:py-28">
+      <ProductDetail
+        product={product}
+        relatedProducts={relatedProducts}
+      />
     </main>
   );
 }

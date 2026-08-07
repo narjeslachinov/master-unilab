@@ -20,9 +20,7 @@ export interface GetProductResponse {
 }
 
 export async function getProducts(): Promise<GetProductsResponse> {
-  const response = await fetch(
-    "http://localhost:3000/api/products",
-  );
+  const response = await fetch("http://localhost:3000/api/products");
 
   if (!response.ok) {
     throw new Error("خطا در دریافت محصولات");
@@ -31,12 +29,8 @@ export async function getProducts(): Promise<GetProductsResponse> {
   return response.json();
 }
 
-export async function getProduct(
-  id: number,
-): Promise<GetProductResponse> {
-  const response = await fetch(
-    `http://localhost:3001/api/products/${id}`,
-  );
+export async function getProduct(id: number): Promise<GetProductResponse> {
+  const response = await fetch(`http://localhost:3000/api/products/${id}`);
 
   if (!response.ok) {
     if (response.status === 404) {
@@ -44,6 +38,19 @@ export async function getProduct(
     }
 
     throw new Error("خطا در دریافت جزئیات محصول");
+  }
+
+  return response.json();
+}
+export async function getRelatedProducts(
+  productId: number,
+): Promise<GetProductsResponse> {
+  const response = await fetch(
+    `http://localhost:3000/api/products/${productId}/related`,
+  );
+
+  if (!response.ok) {
+    throw new Error("خطا در دریافت محصولات مرتبط");
   }
 
   return response.json();

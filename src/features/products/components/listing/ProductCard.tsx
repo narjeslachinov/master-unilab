@@ -117,7 +117,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             asChild
             className="customeSmallText block w-full rounded-md py-1"
           >
-            <Link href={`/productDetails/${product.id}`}>مشاهده جزئیات</Link>
+            <Link href={`/products/${product.id}`}>مشاهده جزئیات</Link>
           </Button>
         ) : (
           <Button
