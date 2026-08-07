@@ -39,7 +39,7 @@ export default function ProductsPage() {
 
   return (
     <Container>
-      <div className="mx-auto flex flex-col gap-8 lg:flex-row pt-12">
+      <div className="mx-auto flex flex-col gap-8 pt-12 lg:flex-row">
         <ProductFilters
           categories={filterOptions.categories}
 
