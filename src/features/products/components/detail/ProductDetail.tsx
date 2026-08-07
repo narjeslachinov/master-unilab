@@ -16,8 +16,6 @@ interface ProductDetailProps {
   relatedProducts: Product[];
 }
 
-
-
 export default function ProductDetail({
   product,
   relatedProducts,
@@ -47,7 +45,7 @@ export default function ProductDetail({
         <ProductTabs product={product} />
 
         <RelatedProducts products={relatedProducts} />
-        <ProductReviews reviews={product.reviews} /> 
+        <ProductReviews reviews={product.reviews} />
       </div>
     </Container>
   );

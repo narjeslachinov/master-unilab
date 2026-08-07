@@ -28,10 +28,7 @@ export default async function ProductDetailPage({
 
   return (
     <main className="bg-neutral-1 py-12 md:py-28">
-      <ProductDetail
-        product={product}
-        relatedProducts={relatedProducts}
-      />
+      <ProductDetail product={product} relatedProducts={relatedProducts} />
     </main>
   );
 }

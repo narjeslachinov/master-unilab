@@ -1,16 +1,11 @@
 "use client";
 
-import {
-  forwardRef,
-  type ReactNode,
-  type TextareaHTMLAttributes,
-} from "react";
+import { forwardRef, type ReactNode, type TextareaHTMLAttributes } from "react";
 
 import { textareaVariants } from "./textareaVariants";
 import { cn } from "@/lib/utils";
 
-export interface TextareaProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   helperText?: string;
   error?: string;
@@ -40,14 +35,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="mb-2 block text-sm text-dark">
-            {label}
-          </label>
+          <label className="text-dark mb-2 block text-sm">{label}</label>
         )}
 
         <div className="relative">
           {startIcon && (
-            <span className="pointer-events-none absolute right-3 top-3 text-gray-3">
+            <span className="text-gray-3 pointer-events-none absolute top-3 right-3">
               {startIcon}
             </span>
           )}
@@ -69,7 +62,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           />
 
           {endIcon && (
-            <span className="pointer-events-none absolute left-3 top-3 text-gray-3">
+            <span className="text-gray-3 pointer-events-none absolute top-3 left-3">
               {endIcon}
             </span>
           )}
@@ -78,9 +71,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {error ? (
           <p className="mt-1 text-sm text-red-500">{error}</p>
         ) : (
-          helperText && (
-            <p className="text-gray-3 mt-1 text-sm">{helperText}</p>
-          )
+          helperText && <p className="text-gray-3 mt-1 text-sm">{helperText}</p>
         )}
       </div>
     );

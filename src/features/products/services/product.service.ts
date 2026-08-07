@@ -20,7 +20,8 @@ export interface GetProductResponse {
 }
 
 export async function getProducts(): Promise<GetProductsResponse> {
-  const response = await fetch("http://localhost:3000/api/products");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+  const response = await fetch("http://localhost:3000/api/products/99999");
 
   if (!response.ok) {
     throw new Error("خطا در دریافت محصولات");

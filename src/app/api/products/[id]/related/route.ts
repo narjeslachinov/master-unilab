@@ -8,17 +8,12 @@ interface RouteContext {
   }>;
 }
 
-export async function GET(
-  _request: Request,
-  { params }: RouteContext,
-) {
+export async function GET(_request: Request, { params }: RouteContext) {
   const { id } = await params;
 
   const productId = Number(id);
 
-  const currentProduct = products.find(
-    (product) => product.id === productId,
-  );
+  const currentProduct = products.find((product) => product.id === productId);
 
   if (!currentProduct) {
     return NextResponse.json(

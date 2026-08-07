@@ -20,11 +20,7 @@ export const textareaVariants = cva(
   {
     variants: {
       variant: {
-        default: [
-          "bg-white",
-          "border-gray-1",
-          "text-dark",
-        ].join(" "),
+        default: ["bg-white", "border-gray-1", "text-dark"].join(" "),
 
         filled: [
           "bg-gray-100",
