@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body
-        className={`${vazir.variable} ${aviny.variable} flex min-h-full flex-col`}
+        className={`${vazir.variable} ${aviny.variable} flex min-h-screen flex-col`}
       >
         <Header />
         {children}

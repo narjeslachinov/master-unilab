@@ -1,15 +1,54 @@
 export default function Loading() {
   return (
-    <main className="min-h-[9vh] bg-neutral-1">
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-gray-200 border-t-accent-1" />
+    <main className="min-h-screen flex items-center justify-center bg-neutral-2 overflow-hidden">
 
-          <p className="text-sm text-gray-3">
-            در حال دریافت اطلاعات...
+      <div className="relative">
+
+        <div
+          className="
+            absolute
+            inset-0
+             bg-neutral-2
+            blur-3xl
+            rounded-full
+            scale-150
+          "
+        />
+
+        <div
+          className="
+            relative
+            glassBg1
+            rounded-xl
+            px-12
+            py-10
+            flex
+            flex-col
+            items-center
+            gap-5
+          "
+        >
+
+          <div
+            className="
+              w-16
+              h-16
+              rounded-full
+              border-4
+              border-primary/20
+              border-t-primary
+              animate-spin
+            "
+          />
+
+          <p className="customeSmallText text-secondary">
+            در حال بارگذاری...
           </p>
+
         </div>
+
       </div>
+
     </main>
-  );
+  )
 }

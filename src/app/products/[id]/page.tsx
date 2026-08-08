@@ -27,7 +27,7 @@ export default async function ProductDetailPage({
   const relatedProducts = relatedResponse.data.items;
 
   return (
-    <main className="bg-neutral-1 py-12 md:py-28">
+    <main className="bg-neutral-1 pb-12 pt-16 md:pb-28 md:pt-40">
       <ProductDetail product={product} relatedProducts={relatedProducts} />
     </main>
   );

@@ -1,45 +1,81 @@
-"use client";
+"use client"
 
-import { useEffect } from "react";
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  Alert02Icon,
+} from '@hugeicons/core-free-icons';
 
-interface ErrorPageProps {
-  error: Error & {
-    digest?: string;
-  };
-
-  reset: () => void;
-}
-
-export default function ErrorPage({
-  error,
+export default function Error({
   reset,
-}: ErrorPageProps) {
-  useEffect(() => {
-    console.error("Application error:", error);
-  }, [error]);
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
 
   return (
-    <main className="flex min-h-[70vh] items-center justify-center bg-neutral-1 px-4">
-      <div className="w-full max-w-md text-center">
-        <div className="mb-6 text-5xl">⚠️</div>
+    <main className="
+      min-h-screen
+      flex
+      items-center
+      justify-center
+      px-4
+      bg-neutral-2
+    ">
 
-        <h1 className="mb-3 text-2xl font-semibold text-dark">
-          مشکلی پیش آمده است
+      <div className="
+        glassBg1
+        rounded-2xl
+        p-10
+        text-center
+        max-w-lg
+      ">
+
+        <div className="
+          text-6xl
+          mb-5
+ w-full mx-auto
+ text-yellow-500
+        ">
+          <HugeiconsIcon icon={Alert02Icon} size={50} className="w-full"/>
+        </div>
+
+
+        <h1 className="
+          heading
+          heading2
+          mb-4
+        ">
+          مشکلی پیش آمد
         </h1>
 
-        <p className="mb-6 text-gray-3">
-          متأسفانه هنگام دریافت اطلاعات مشکلی رخ داد.
+
+        <p className="
+          customeSmallText
+          text-gray-2
+          mb-8
+        ">
+          خطایی رخ داده است.
           لطفاً دوباره تلاش کنید.
         </p>
 
+
         <button
-          type="button"
           onClick={() => reset()}
-          className="rounded-full bg-accent-1 px-6 py-3 text-white transition-opacity hover:opacity-90"
+          className="
+            bg-primary
+            text-light
+            px-8
+            py-3
+            rounded-xl
+            hover:scale-105
+            transition
+          "
         >
-          تلاش مجدد
+          تلاش دوباره
         </button>
+
       </div>
+
     </main>
-  );
+  )
 }
