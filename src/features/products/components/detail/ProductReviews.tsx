@@ -6,17 +6,18 @@ import { motion } from "framer-motion";
 import ProductReviewCard from "./ProductReviewCard";
 import ProductReviewPagination from "./ProductReviewPagination";
 
-import type { Review } from "../../types/product-detail.types";
+import type { Review } from "@/types/product-detail.types";
 import { Button } from "@/components/ui/Button";
 import ProductReviewModal from "./ProductReviewModal";
-
-interface ProductReviewsProps {
-  reviews: Review[];
-}
+import { useProductDetail } from "./context/ProductDetailContext";
 
 const REVIEWS_PER_PAGE = 3;
 
-export default function ProductReviews({ reviews }: ProductReviewsProps) {
+export default function ProductReviews() {
+  const { product } = useProductDetail();
+
+  const reviews = product.reviews;
+  const productId = product.id;
   const [currentPage, setCurrentPage] = useState(1);
 
   const [showModal, setShowModal] = useState(false);
@@ -92,6 +93,7 @@ export default function ProductReviews({ reviews }: ProductReviewsProps) {
       <ProductReviewModal
         open={showModal}
         onClose={() => setShowModal(false)}
+        productId={productId}
       />
     </section>
   );

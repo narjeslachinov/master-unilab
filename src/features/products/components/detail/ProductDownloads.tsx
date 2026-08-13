@@ -1,7 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import { File02Icon, Notebook01Icon } from "@hugeicons/core-free-icons";
-import type { Download } from "../../types/product-detail.types";
+import type { Download } from "@/types/product-detail.types";
 
 interface ProductDownloadsProps {
   downloads: Download[];

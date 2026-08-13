@@ -1,7 +1,7 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import { CheckmarkCircle03Icon } from "@hugeicons/core-free-icons";
-import type { Feature } from "../../types/product-detail.types";
+import type { Feature } from "@/types/product-detail.types";
 
 interface ProductDescriptionProps {
   description: string;

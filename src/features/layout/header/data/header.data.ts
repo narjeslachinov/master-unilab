@@ -27,21 +27,21 @@ export const menuItems: MenuItem[] = [
         id: 1,
 
         name: "محصول A",
-        href: "/ProductDetails",
+        href: "/products",
         className: "header-nav-right-link",
       },
       {
         id: 2,
 
         name: "محصول B",
-        href: "/ProductDetails",
+        href: "/products",
         className: "header-nav-right-link",
       },
       {
         id: 3,
 
         name: "محصول C",
-        href: "/ProductDetails",
+        href: "/products",
         className: "header-nav-right-link",
       },
     ],
@@ -84,57 +84,57 @@ export const megaMenu: MegaMenu = {
     {
       id: 1,
       name: "محصول A",
-      href: "/ProductDetails",
+      href: "/products",
 
       items: [
         {
           id: 1,
           name: "زیرمحصول A1",
-          href: "/ProductDetails",
+          href: "/products",
           children: [
             {
               id: 1,
               name: "محصول A1-1",
-              href: "/ProductDetails",
+              href: "/products",
             },
             {
               id: 2,
               name: "محصول A1-2",
-              href: "/ProductDetails",
+              href: "/products",
             },
           ],
         },
         {
           id: 2,
           name: "زیرمحصول A2",
-          href: "/ProductDetails",
+          href: "/products",
           children: [
             {
               id: 1,
               name: "محصول A2-1",
-              href: "/ProductDetails",
+              href: "/products",
             },
             {
               id: 2,
               name: "محصول A2-2",
-              href: "/ProductDetails",
+              href: "/products",
             },
           ],
         },
         {
           id: 3,
           name: "زیرمحصول A3",
-          href: "/ProductDetails",
+          href: "/products",
           children: [
             {
               id: 1,
               name: "محصول A3-1",
-              href: "/ProductDetails",
+              href: "/products",
             },
             {
               id: 2,
               name: "محصول A3-2",
-              href: "/ProductDetails",
+              href: "/products",
             },
           ],
         },
@@ -144,30 +144,30 @@ export const megaMenu: MegaMenu = {
     {
       id: 2,
       name: "محصول B",
-      href: "/ProductDetails",
+      href: "/products",
 
       items: [
         {
           id: 1,
           name: "زیرمحصول B1",
-          href: "/ProductDetails",
+          href: "/products",
           children: [
             {
               id: 1,
               name: "محصول B1-1",
-              href: "/ProductDetails",
+              href: "/products",
             },
           ],
         },
         {
           id: 2,
           name: "زیرمحصول B2",
-          href: "/ProductDetails",
+          href: "/products",
           children: [
             {
               id: 1,
               name: "محصول B2-1",
-              href: "/ProductDetails",
+              href: "/products",
             },
           ],
         },
@@ -177,25 +177,25 @@ export const megaMenu: MegaMenu = {
     {
       id: 3,
       name: "محصول C",
-      href: "/ProductDetails",
+      href: "/products",
       items: [],
     },
     {
       id: 4,
       name: "محصول D",
-      href: "/ProductDetails",
+      href: "/products",
       items: [],
     },
     {
       id: 5,
       name: "محصول E",
-      href: "/ProductDetails",
+      href: "/products",
       items: [],
     },
     {
       id: 6,
       name: "محصول F",
-      href: "/ProductDetails",
+      href: "/products",
       items: [],
     },
   ],

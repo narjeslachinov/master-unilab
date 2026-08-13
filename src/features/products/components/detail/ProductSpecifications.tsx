@@ -1,4 +1,4 @@
-import type { Specification } from "../../types/product-detail.types";
+import type { Specification } from "@/types/product-detail.types";
 
 interface ProductSpecificationsProps {
   specifications: Specification[];

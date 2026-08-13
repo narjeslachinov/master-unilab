@@ -1,5 +1,5 @@
-import type { Product } from "../types/product.types";
-import type { ProductDetail } from "../types/product-detail.types";
+import type { Product } from "@/types/product.types";
+import type { ProductDetail } from "@/types/product-detail.types";
 
 interface Pagination {
   page: number;
@@ -17,6 +17,22 @@ export interface GetProductsResponse {
 
 export interface GetProductResponse {
   data: ProductDetail;
+}
+
+export interface CreateReviewPayload {
+  name: string;
+  comment: string;
+  rating: number;
+}
+
+export interface CreateReviewResponse {
+  data: {
+    id: number;
+    name: string;
+    rating: number;
+    comment: string;
+    date: string;
+  };
 }
 
 export async function getProducts(): Promise<GetProductsResponse> {
@@ -52,6 +68,29 @@ export async function getRelatedProducts(
 
   if (!response.ok) {
     throw new Error("خطا در دریافت محصولات مرتبط");
+  }
+
+  return response.json();
+}
+export async function createProductReview(
+  productId: number,
+  payload: CreateReviewPayload,
+): Promise<CreateReviewResponse> {
+  const response = await fetch(
+    `http://localhost:3000/api/products/${productId}/reviews`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    },
+  );
+
+  if (!response.ok) {
+    const error = await response.json();
+
+    throw new Error(error.message || "خطا در ثبت نظر");
   }
 
   return response.json();

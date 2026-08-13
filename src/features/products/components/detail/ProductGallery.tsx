@@ -8,15 +8,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 
 import { cn } from "@/lib/utils";
+import { useProductDetail } from "./context/ProductDetailContext";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 
-interface ProductGalleryProps {
-  images: StaticImageData[] | string[];
-}
+export default function ProductGallery() {
+  const { product } = useProductDetail();
 
-export default function ProductGallery({ images }: ProductGalleryProps) {
+  const { images } = product;
+
   const [mainImage, setMainImage] = useState<StaticImageData | string>(
     images[0],
   );
@@ -27,7 +28,6 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
 
   return (
     <div className="flex flex-col items-center">
-      {/* Main Image */}
       <div className="relative h-96 w-full overflow-hidden rounded-2xl border border-white/40 bg-white/30 p-4 shadow-lg backdrop-blur-md">
         <Image
           src={mainImage}
@@ -38,7 +38,6 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
         />
       </div>
 
-      {/* Thumbnails */}
       <Swiper
         modules={[FreeMode]}
         spaceBetween={10}

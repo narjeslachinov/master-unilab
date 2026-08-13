@@ -14,16 +14,15 @@ import {
   Tick01Icon,
 } from "@hugeicons/core-free-icons";
 
-import type { ProductDetail } from "../../types/product-detail.types";
+import type { ProductDetail } from "@/types/product-detail.types";
 
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { useProductDetail } from "./context/ProductDetailContext";
 
-interface ProductInfoProps {
-  product: ProductDetail;
-}
+export default function ProductInfo() {
+  const { product } = useProductDetail();
 
-export default function ProductInfo({ product }: ProductInfoProps) {
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [wishlist, setWishlist] = useState(false);

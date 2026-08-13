@@ -7,16 +7,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import type { Product } from "../../types/product.types";
 import ProductCard from "../listing/ProductCard";
 import { Button } from "@/components/ui/Button";
 
-interface RelatedProductsProps {
-  products: Product[];
-}
+import { useProductDetail } from "./context/ProductDetailContext";
 
-export default function RelatedProducts({ products }: RelatedProductsProps) {
-  if (!products.length) {
+export default function RelatedProducts() {
+  const { relatedProducts } = useProductDetail();
+
+  if (!relatedProducts.length) {
     return null;
   }
 
@@ -30,36 +29,28 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
 
       <Swiper
         className="custom-swiper"
-
         modules={[Navigation, Pagination]}
-
         spaceBetween={20}
-
         navigation
-
         breakpoints={{
           320: {
             slidesPerView: 1.5,
           },
-
           480: {
             slidesPerView: 2,
           },
-
           768: {
             slidesPerView: 3,
           },
-
           1024: {
             slidesPerView: 4,
           },
-
           1400: {
             slidesPerView: 5,
           },
         }}
       >
-        {products.map((product) => (
+        {relatedProducts.map((product) => (
           <SwiperSlide key={product.id}>
             <ProductCard product={product} />
           </SwiperSlide>

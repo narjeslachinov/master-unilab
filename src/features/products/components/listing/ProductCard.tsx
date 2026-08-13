@@ -10,7 +10,7 @@ import { ShoppingCart02Icon, ViewIcon } from "@hugeicons/core-free-icons";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
-import type { Product } from "../../types/product.types";
+import type { Product } from "@/types/product.types";
 
 interface ProductCardProps {
   product: Product;

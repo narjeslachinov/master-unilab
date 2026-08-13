@@ -19,11 +19,7 @@ import ProductSpecifications from "./ProductSpecifications";
 import ProductDownloads from "./ProductDownloads";
 import ProductDescription from "./ProductDescription";
 
-import type { ProductDetail } from "../../types/product-detail.types";
-
-interface ProductTabsProps {
-  product: ProductDetail;
-}
+import { useProductDetail } from "./context/ProductDetailContext";
 
 type ProductTabKey = "description" | "specifications" | "downloads";
 
@@ -51,7 +47,9 @@ const tabs: ProductTab[] = [
   },
 ];
 
-export default function ProductTabs({ product }: ProductTabsProps) {
+export default function ProductTabs() {
+  const { product } = useProductDetail();
+
   const [activeTab, setActiveTab] = useState<ProductTabKey>("description");
 
   const renderContent = () => {

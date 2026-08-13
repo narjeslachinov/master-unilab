@@ -9,7 +9,7 @@ import ServicesSection from "@/features/home/components/servicesSection/Services
 
 export default function Home() {
   return (
-    <main className="bg-neutral-1 0 space-y-16 py-12 md:py-28 min-h-screen">
+    <main className="bg-neutral-1 0 min-h-screen space-y-16 py-12 md:py-28">
       <HeroSlider />
       <ServicesSection />
       <ProductCategories />

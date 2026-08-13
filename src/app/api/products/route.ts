@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { products } from "@/features/products/data/products.data";
+import { products } from "@/data/products.data";
 
-export async function GET() {
+export function GET() {
   return NextResponse.json({
     data: {
       items: products,

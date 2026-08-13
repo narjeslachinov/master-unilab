@@ -1,18 +1,19 @@
 "use client";
 
-// import Breadcrumb from "@/components/common/Breadcrumb";
+import type { Product } from "@/types/product.types";
+import type { ProductDetail as ProductDetailType } from "@/types/product-detail.types";
 
-import type { Product } from "../../types/product.types";
-import type { ProductDetail } from "../../types/product-detail.types";
 import ProductGallery from "./ProductGallery";
 import ProductInfo from "./ProductInfo";
 import ProductReviews from "./ProductReviews";
 import ProductTabs from "./ProductTabs";
 import RelatedProducts from "./RelatedProducts";
+
 import { Container } from "@/components/ui/Container";
+import { ProductDetailProvider } from "./context/ProductDetailContext";
 
 interface ProductDetailProps {
-  product: ProductDetail;
+  product: ProductDetailType;
   relatedProducts: Product[];
 }
 
@@ -20,33 +21,23 @@ export default function ProductDetail({
   product,
   relatedProducts,
 }: ProductDetailProps) {
-  console.log("relatedProducts:", relatedProducts);
   return (
-    <Container>
-      <div className="flex flex-col gap-8 py-12 md:gap-12">
-        {/* <Breadcrumb
-          items={[
-            { label: "خانه", href: "/" },
-            { label: "محصولات", href: "/products" },
-            {
-              label: product.category,
-              href: `/products?category=${encodeURIComponent(product.category)}`,
-            },
-            { label: product.name },
-          ]}
-        /> */}
+    <ProductDetailProvider product={product} relatedProducts={relatedProducts}>
+      <Container>
+        <div className="flex flex-col gap-8 py-12 md:gap-12">
+          <section className="grid grid-cols-1 gap-8 xl:grid-cols-2">
+            <ProductGallery />
 
-        <section className="grid grid-cols-1 gap-8 xl:grid-cols-2">
-          <ProductGallery images={product.images} />
+            <ProductInfo />
+          </section>
 
-          <ProductInfo product={product} />
-        </section>
+          <ProductTabs />
 
-        <ProductTabs product={product} />
+          <RelatedProducts />
 
-        <RelatedProducts products={relatedProducts} />
-        <ProductReviews reviews={product.reviews} />
-      </div>
-    </Container>
+          <ProductReviews />
+        </div>
+      </Container>
+    </ProductDetailProvider>
   );
 }

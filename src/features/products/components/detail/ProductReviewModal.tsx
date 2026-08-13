@@ -9,55 +9,85 @@ import { Modal } from "@/components/ui/Modal";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 
+import {
+  createProductReview,
+  type CreateReviewPayload,
+} from "../../services/product.service";
+
 interface ProductReviewModalProps {
   open: boolean;
   onClose: () => void;
+  productId: number;
 }
 
 export default function ProductReviewModal({
   open,
   onClose,
+  productId,
 }: ProductReviewModalProps) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!name.trim() || !comment.trim() || rating === 0) {
       return;
     }
 
-    // فعلاً فقط UI داریم.
-    // در مرحله API اینجا request ارسال خواهد شد.
+    try {
+      setIsSubmitting(true);
+      setError("");
 
-    setName("");
-    setComment("");
-    setRating(0);
+      const payload: CreateReviewPayload = {
+        name: name.trim(),
+        comment: comment.trim(),
+        rating,
+      };
 
-    onClose();
+      const response = await createProductReview(productId, payload);
+
+      console.log("Review created:", response.data);
+
+      setName("");
+      setComment("");
+      setRating(0);
+
+      onClose();
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "خطا در ثبت نظر");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Modal open={open} onClose={onClose} className="glassBg1">
-      {/* Header */}
       <div className="flex items-center justify-center gap-2">
         <h2 className="heading5 text-secondary font-bold">ثبت نظر</h2>
       </div>
+
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           type="text"
           placeholder="نام"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
           endIcon={
             <HugeiconsIcon aria-hidden size={20} icon={UserCircleIcon} />
           }
         />
+
         <Textarea
           id="review-comment"
           rows={4}
           value={comment}
           onChange={(event) => setComment(event.target.value)}
+          placeholder="نظر خود را بنویسید..."
         />
 
         <div className="flex items-center justify-between">
@@ -70,7 +100,8 @@ export default function ProductReviewModal({
                 type="button"
                 onClick={() => setRating(value)}
                 aria-label={`امتیاز ${value}`}
-                className="transition-transform duration-200 hover:scale-110"
+                disabled={isSubmitting}
+                className="transition-transform duration-200 hover:scale-110 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <HugeiconsIcon
                   icon={StarIcon}
@@ -84,8 +115,10 @@ export default function ProductReviewModal({
           </div>
         </div>
 
-        <Button type="submit" className="w-full">
-          ارسال نظر
+        {error && <p className="text-sm text-red-500">{error}</p>}
+
+        <Button type="submit" className="w-full" disabled={isSubmitting}>
+          {isSubmitting ? "در حال ارسال..." : "ارسال نظر"}
         </Button>
       </form>
     </Modal>

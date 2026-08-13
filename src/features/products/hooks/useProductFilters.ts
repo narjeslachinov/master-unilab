@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import type { Product } from "../types/product.types";
+import type { Product } from "@/types/product.types";
 import type { ProductSortOption } from "../types/product-filter.types";
 
 export function useProductFilters(products: Product[]) {
@@ -16,10 +16,6 @@ export function useProductFilters(products: Product[]) {
 
   const [sortBy, setSortBy] = useState<ProductSortOption>("newest");
 
-  /*
-    ساخت خودکار گزینه های فیلتر
-    از روی دیتای محصولات
-  */
   const filterOptions = useMemo(() => {
     const categories = [
       "همه",
@@ -37,9 +33,6 @@ export function useProductFilters(products: Product[]) {
     };
   }, [products]);
 
-  /*
-    اعمال فیلترها
-  */
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
       const matchesCategory =
@@ -101,10 +94,8 @@ export function useProductFilters(products: Product[]) {
   };
 
   return {
-    // گزینه های ساخته شده از دیتا
     filterOptions,
 
-    // state ها
     selectedCategory,
 
     selectedVolumes,
@@ -115,10 +106,8 @@ export function useProductFilters(products: Product[]) {
 
     sortBy,
 
-    // نتیجه نهایی
     filteredProducts,
 
-    // تغییر دهنده ها
     setSelectedCategory,
 
     setMaxPrice,

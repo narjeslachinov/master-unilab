@@ -1,5 +1,5 @@
 import { HugeiconsIcon } from "@hugeicons/react";
-import type { Review } from "../../types/product-detail.types";
+import type { Review } from "@/types/product-detail.types";
 import { StarIcon } from "@hugeicons/core-free-icons";
 
 interface ProductReviewCardProps {
