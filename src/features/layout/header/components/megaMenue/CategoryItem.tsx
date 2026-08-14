@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft01Icon } from "@hugeicons/core-free-icons";
 
-import { MegaMenuSection } from "../../type/header.type";
+import type { MegaMenuSection } from "../../type/header.type";
 import MegaMenuPanel from "./MegaMenuPanel";
 
 type Props = {
@@ -31,12 +31,19 @@ export default function CategoryItem({
         <span>{section.name}</span>
 
         {section.items && section.items.length > 0 && (
-          <HugeiconsIcon aria-hidden size={20} icon={ArrowLeft01Icon} />
+          <HugeiconsIcon
+            aria-hidden
+            size={20}
+            icon={ArrowLeft01Icon}
+          />
         )}
       </Link>
 
       {section.items && section.items.length > 0 && (
-        <MegaMenuPanel items={section.items} isOpen={isOpen} />
+        <MegaMenuPanel
+          items={section.items}
+          isOpen={isOpen}
+        />
       )}
     </li>
   );

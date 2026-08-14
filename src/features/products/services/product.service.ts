@@ -1,5 +1,5 @@
-import type { Product } from "@/types/product.types";
-import type { ProductDetail } from "@/types/product-detail.types";
+import type { Product } from "../types/product.types";
+import type { ProductDetail } from "../types/product-detail.types";
 
 interface Pagination {
   page: number;
@@ -36,7 +36,7 @@ export interface CreateReviewResponse {
 }
 
 export async function getProducts(): Promise<GetProductsResponse> {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const response = await fetch("http://localhost:3000/api/products");
 
   if (!response.ok) {

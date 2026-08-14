@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { products } from "@/data/products.data";
+import { products } from "@/features/products/data/products.data";
 
 export function GET() {
   return NextResponse.json({

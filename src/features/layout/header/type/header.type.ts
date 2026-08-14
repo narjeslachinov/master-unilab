@@ -1,26 +1,17 @@
 import { IconSvgElement } from "@hugeicons/react";
 
 export interface MenuLink {
-  id: number;
-  name: string;
-  href: string;
-  className?: string;
-  children?: MenuLink[];
-}
-
-export interface MenuItem {
-  id: number;
+  id: string | number;
   name: string;
   href: string;
   children?: MenuLink[];
-  megaMenuKey?: string;
 }
 
 export interface MegaMenuSection {
-  id: number;
+  id: string | number;
   name: string;
   href: string;
-  items: MenuLink[];
+  items?: MenuLink[];
 }
 
 export type MegaMenu = Record<string, MegaMenuSection[]>;

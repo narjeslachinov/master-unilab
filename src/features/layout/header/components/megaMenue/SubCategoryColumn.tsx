@@ -1,14 +1,17 @@
 import Link from "next/link";
-import { MenuLink } from "../../type/header.type";
+
+import type { MenuLink } from "../../type/header.type";
 import SubCategoryLink from "./SubCategoryLink";
 
 type Props = {
   item: MenuLink;
 };
 
-export default function SubCategoryColumn({ item }: Props) {
+export default function SubCategoryColumn({
+  item,
+}: Props) {
   return (
-    <li className="flex w-full flex-col">
+    <li className="flex w-full min-w-40 flex-col">
       <Link href={item.href}>
         <span className="border-dark text-dark block border-b pb-2 font-semibold">
           {item.name}

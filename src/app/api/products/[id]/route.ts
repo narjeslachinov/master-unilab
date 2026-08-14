@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { productDetails } from "@/data/product-details.data";
+import { productDetails } from "@/features/products/data/product-details.data";
 interface RouteContext {
   params: Promise<{
     id: string;

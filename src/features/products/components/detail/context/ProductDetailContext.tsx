@@ -2,8 +2,8 @@
 
 import { createContext, useContext, type ReactNode } from "react";
 
-import type { Product } from "@/types/product.types";
-import type { ProductDetail } from "@/types/product-detail.types";
+import type { Product } from "../../../types/product.types";
+import type { ProductDetail } from "../../../types/product-detail.types";
 
 interface ProductDetailContextValue {
   product: ProductDetail;

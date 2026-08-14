@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { MenuLink } from "../../type/header.type";
+
+import type { MenuLink } from "../../type/header.type";
 
 type Props = {
   child: MenuLink;
 };
 
-export default function SubCategoryLink({ child }: Props) {
+export default function SubCategoryLink({
+  child,
+}: Props) {
   return (
     <Link
       href={child.href}

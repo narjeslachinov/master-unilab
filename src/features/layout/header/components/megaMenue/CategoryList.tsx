@@ -1,5 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
-import { MegaMenuSection } from "../../type/header.type";
+import type { Dispatch, SetStateAction } from "react";
+
+import type { MegaMenuSection } from "../../type/header.type";
 import CategoryItem from "./CategoryItem";
 
 type Props = {
@@ -19,8 +20,8 @@ export default function CategoryList({
         <CategoryItem
           key={section.id}
           section={section}
-          isOpen={openMega === section.name}
-          onOpen={() => setOpenMega(section.name)}
+          isOpen={openMega === String(section.id)}
+          onOpen={() => setOpenMega(String(section.id))}
           onClose={() => setOpenMega(null)}
         />
       ))}

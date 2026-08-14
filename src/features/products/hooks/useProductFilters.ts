@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import type { Product } from "@/types/product.types";
+import type { Product } from "../types/product.types";
 import type { ProductSortOption } from "../types/product-filter.types";
 
 export function useProductFilters(products: Product[]) {
