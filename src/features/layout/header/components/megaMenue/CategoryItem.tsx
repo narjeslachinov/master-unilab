@@ -31,19 +31,12 @@ export default function CategoryItem({
         <span>{section.name}</span>
 
         {section.items && section.items.length > 0 && (
-          <HugeiconsIcon
-            aria-hidden
-            size={20}
-            icon={ArrowLeft01Icon}
-          />
+          <HugeiconsIcon aria-hidden size={20} icon={ArrowLeft01Icon} />
         )}
       </Link>
 
       {section.items && section.items.length > 0 && (
-        <MegaMenuPanel
-          items={section.items}
-          isOpen={isOpen}
-        />
+        <MegaMenuPanel items={section.items} isOpen={isOpen} />
       )}
     </li>
   );

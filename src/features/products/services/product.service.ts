@@ -36,7 +36,6 @@ export interface CreateReviewResponse {
 }
 
 export async function getProducts(): Promise<GetProductsResponse> {
-
   const response = await fetch("http://localhost:3000/api/products");
 
   if (!response.ok) {

@@ -4,7 +4,12 @@ export interface MenuLink {
   id: string | number;
   name: string;
   href: string;
+  className?: string;
   children?: MenuLink[];
+}
+
+export interface MenuItem extends MenuLink {
+  megaMenuKey?: string;
 }
 
 export interface MegaMenuSection {

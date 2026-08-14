@@ -13,9 +13,7 @@ export default function MegaMenu() {
   if (isLoading) {
     return (
       <div className="headerMenue1 headerMenueBg1 invisible absolute top-full left-1/2 h-80 w-48 pt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-        <div className="p-4 text-center text-sm">
-          در حال دریافت محصولات...
-        </div>
+        <div className="p-4 text-center text-sm">در حال دریافت محصولات...</div>
       </div>
     );
   }
@@ -23,9 +21,7 @@ export default function MegaMenu() {
   if (error) {
     return (
       <div className="headerMenue1 headerMenueBg1 invisible absolute top-full left-1/2 h-80 w-48 pt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-        <div className="p-4 text-center text-sm text-red-500">
-          {error}
-        </div>
+        <div className="p-4 text-center text-sm text-red-500">{error}</div>
       </div>
     );
   }

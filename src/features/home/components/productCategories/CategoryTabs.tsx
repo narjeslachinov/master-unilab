@@ -1,13 +1,16 @@
 "use client";
 
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Category } from "../../type/home.type";
 import { cn } from "@/lib/utils";
+
+interface Category {
+  id: string;
+  name: string;
+}
 
 interface CategoryTabsProps {
   categories: Category[];
-  activeCategory: number;
-  onChange: (id: number) => void;
+  activeCategory: string;
+  onChange: (id: string) => void;
 }
 
 export default function CategoryTabs({
@@ -16,21 +19,19 @@ export default function CategoryTabs({
   onChange,
 }: CategoryTabsProps) {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 xl:gap-5">
+    <div className="flex flex-wrap justify-center gap-4">
       {categories.map((category) => (
         <button
           key={category.id}
           onClick={() => onChange(category.id)}
           className={cn(
-            "flex w-24 cursor-pointer flex-col items-center gap-2 rounded-full transition",
+            "rounded-full px-6 py-3 transition",
             activeCategory === category.id
               ? "activeCategoriesBtn"
               : "categoriesBtn",
           )}
         >
-          <HugeiconsIcon icon={category.icon} size={20} />
-
-          <span>{category.name}</span>
+          {category.name}
         </button>
       ))}
     </div>

@@ -7,9 +7,7 @@ type Props = {
   item: MenuLink;
 };
 
-export default function SubCategoryColumn({
-  item,
-}: Props) {
+export default function SubCategoryColumn({ item }: Props) {
   return (
     <li className="flex w-full min-w-40 flex-col">
       <Link href={item.href}>

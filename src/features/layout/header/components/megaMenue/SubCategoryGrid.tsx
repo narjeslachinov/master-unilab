@@ -5,16 +5,11 @@ type Props = {
   items: MenuLink[];
 };
 
-export default function SubCategoryGrid({
-  items,
-}: Props) {
+export default function SubCategoryGrid({ items }: Props) {
   return (
     <ul className="flex w-full items-start justify-start gap-8">
       {items.map((item) => (
-        <SubCategoryColumn
-          key={item.id}
-          item={item}
-        />
+        <SubCategoryColumn key={item.id} item={item} />
       ))}
     </ul>
   );

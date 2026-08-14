@@ -3,8 +3,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-import ProductCard from "./ProductCard";
-import { Product } from "../../type/home.type";
+import ProductCard from "@/features/products/components/listing/ProductCard";
+
+import type { Product } from "@/features/products/types/product.types";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -29,14 +30,12 @@ export default function ProductSlider({ products }: ProductSliderProps) {
           768: { slidesPerView: 3 },
           900: { slidesPerView: 3.5 },
           1024: { slidesPerView: 4 },
-          1100: { slidesPerView: 4.5 },
-          1200: { slidesPerView: 5 },
-          1300: { slidesPerView: 5.5 },
-          1400: { slidesPerView: 6 },
+          1200: { slidesPerView: 4.5 },
+          1400: { slidesPerView: 5 },
         }}
       >
-        {products.map((product, index) => (
-          <SwiperSlide key={index}>
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
             <ProductCard product={product} />
           </SwiperSlide>
         ))}

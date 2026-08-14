@@ -10,7 +10,7 @@ import { ShoppingCart02Icon, ViewIcon } from "@hugeicons/core-free-icons";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
-import type { Product } from "@/types/product.types";
+import type { Product } from "../../types/product.types";
 
 interface ProductCardProps {
   product: Product;
@@ -71,7 +71,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             )}
           >
             <Link
-              href={`/product/${product.id}`}
+              href={`/products/${product.id}`}
               aria-label={`مشاهده ${product.name}`}
               className={cn(
                 "bg-light rounded-full p-2 shadow-md",
