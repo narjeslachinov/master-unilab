@@ -1,8 +1,9 @@
-import ProductDetail from "@/features/products/components/detail/ProductDetail";
+import { notFound } from "next/navigation";
 
+import ProductDetail from "@/features/products/components/detail/ProductDetail";
 import {
-  getProduct,
-  getRelatedProducts,
+  getProductServer,
+  getRelatedProductsServer,
 } from "@/features/products/services/product.service";
 
 interface ProductDetailPageProps {
@@ -18,17 +19,25 @@ export default async function ProductDetailPage({
 
   const productId = Number(id);
 
-  const [productResponse, relatedResponse] = await Promise.all([
-    getProduct(productId),
-    getRelatedProducts(productId),
+  if (!Number.isInteger(productId)) {
+    notFound();
+  }
+
+  const [product, relatedProductsResult] = await Promise.all([
+    getProductServer(productId),
+    getRelatedProductsServer(productId),
   ]);
 
-  const product = productResponse.data;
-  const relatedProducts = relatedResponse.data.items;
+  if (!product) {
+    notFound();
+  }
 
   return (
     <main className="bg-neutral-1 pt-16 pb-12 md:pt-40 md:pb-28">
-      <ProductDetail product={product} relatedProducts={relatedProducts} />
+      <ProductDetail
+        product={product}
+        relatedProducts={relatedProductsResult.items}
+      />
     </main>
   );
 }

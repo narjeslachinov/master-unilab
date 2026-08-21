@@ -7,13 +7,9 @@ import type { ProductSortOption } from "../types/product-filter.types";
 
 export function useProductFilters(products: Product[]) {
   const [selectedCategory, setSelectedCategory] = useState("همه");
-
   const [selectedVolumes, setSelectedVolumes] = useState<string[]>([]);
-
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-
   const [maxPrice, setMaxPrice] = useState(4_000_000);
-
   const [sortBy, setSortBy] = useState<ProductSortOption>("newest");
 
   const filterOptions = useMemo(() => {
@@ -50,7 +46,7 @@ export function useProductFilters(products: Product[]) {
       return matchesCategory && matchesVolume && matchesBrand && matchesPrice;
     });
 
-    return [...filtered].sort((a, b) => {
+    return filtered.sort((a, b) => {
       switch (sortBy) {
         case "priceLow":
           return a.price - b.price;
@@ -59,7 +55,6 @@ export function useProductFilters(products: Product[]) {
           return b.price - a.price;
 
         case "newest":
-
         default:
           return b.id - a.id;
       }
@@ -74,48 +69,38 @@ export function useProductFilters(products: Product[]) {
   ]);
 
   const toggleVolume = (volume: string) => {
-    setSelectedVolumes((current) => {
-      if (current.includes(volume)) {
-        return current.filter((item) => item !== volume);
-      }
-
-      return [...current, volume];
-    });
+    setSelectedVolumes((current) =>
+      current.includes(volume)
+        ? current.filter((item) => item !== volume)
+        : [...current, volume],
+    );
   };
 
   const toggleBrand = (brand: string) => {
-    setSelectedBrands((current) => {
-      if (current.includes(brand)) {
-        return current.filter((item) => item !== brand);
-      }
-
-      return [...current, brand];
-    });
+    setSelectedBrands((current) =>
+      current.includes(brand)
+        ? current.filter((item) => item !== brand)
+        : [...current, brand],
+    );
   };
 
   return {
     filterOptions,
 
     selectedCategory,
-
     selectedVolumes,
-
     selectedBrands,
 
     maxPrice,
-
     sortBy,
 
     filteredProducts,
 
     setSelectedCategory,
-
     setMaxPrice,
-
     setSortBy,
 
     toggleVolume,
-
     toggleBrand,
   };
 }

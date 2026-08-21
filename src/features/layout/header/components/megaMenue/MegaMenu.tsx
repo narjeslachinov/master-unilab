@@ -4,11 +4,14 @@ import { useState } from "react";
 
 import CategoryList from "./CategoryList";
 import { useMegaMenu } from "../../hooks/useMegaMenu";
+import { useProducts } from "@/features/products/hooks/useProducts";
 
 export default function MegaMenu() {
   const [openMega, setOpenMega] = useState<string | null>(null);
 
-  const { sections, isLoading, error } = useMegaMenu();
+  const { products, isLoading, error } = useProducts();
+
+  const { sections } = useMegaMenu(products);
 
   if (isLoading) {
     return (

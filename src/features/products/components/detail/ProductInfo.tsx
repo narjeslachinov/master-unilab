@@ -14,8 +14,6 @@ import {
   Tick01Icon,
 } from "@hugeicons/core-free-icons";
 
-import type { ProductDetail } from "@/types/product-detail.types";
-
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { useProductDetail } from "./context/ProductDetailContext";

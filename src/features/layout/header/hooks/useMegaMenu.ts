@@ -1,36 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import type { Product } from "@/features/products/types/product.types";
-import { getProducts } from "@/features/products/services/product.service";
 
 import type { MegaMenuSection } from "../type/header.type";
 
-export function useMegaMenu() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        const response = await getProducts();
-
-        setProducts(response.data.items);
-      } catch {
-        setError("خطا در دریافت اطلاعات منو");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchProducts();
-  }, []);
-
+export function useMegaMenu(products: Product[]) {
   const sections = useMemo<MegaMenuSection[]>(() => {
     const categories = Array.from(
       new Set(products.map((product) => product.category)),
@@ -75,8 +51,5 @@ export function useMegaMenu() {
 
   return {
     sections,
-    products,
-    isLoading,
-    error,
   };
 }

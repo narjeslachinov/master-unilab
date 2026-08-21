@@ -8,7 +8,6 @@ import ProductCategories from "@/features/home/components/productCategories/Prod
 import ServicesSection from "@/features/home/components/servicesSection/ServicesSection";
 import { useProducts } from "@/features/products/hooks/useProducts";
 
-
 export default function Home() {
   const { products } = useProducts();
   return (

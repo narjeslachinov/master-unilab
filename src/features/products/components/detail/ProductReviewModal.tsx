@@ -8,11 +8,10 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
-
 import {
   createProductReview,
-  type CreateReviewPayload,
-} from "../../services/product.service";
+  CreateReviewPayload,
+} from "../../services/products.service";
 
 interface ProductReviewModalProps {
   open: boolean;

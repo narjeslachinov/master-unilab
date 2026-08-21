@@ -63,9 +63,7 @@ export default function ProductCategories({
             </div>
 
             <Button asChild>
-              <Link href="/products">
-              مشاهده همه
-              </Link>
+              <Link href="/products">مشاهده همه</Link>
             </Button>
           </div>
 

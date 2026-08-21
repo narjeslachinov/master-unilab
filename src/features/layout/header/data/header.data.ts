@@ -15,13 +15,13 @@ export const menuItems: MenuItem[] = [
   {
     id: 1,
     name: "دسته بندی",
-    href: "/ProductsPage",
+    href: "/products",
     megaMenuKey: "products",
   },
   {
     id: 2,
     name: "محصولات",
-    href: "/ProductsPage",
+    href: "/products",
     children: [
       {
         id: 1,
@@ -79,127 +79,6 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
-export const megaMenu: MegaMenu = {
-  products: [
-    {
-      id: 1,
-      name: "محصول A",
-      href: "/products",
-
-      items: [
-        {
-          id: 1,
-          name: "زیرمحصول A1",
-          href: "/products",
-          children: [
-            {
-              id: 1,
-              name: "محصول A1-1",
-              href: "/products",
-            },
-            {
-              id: 2,
-              name: "محصول A1-2",
-              href: "/products",
-            },
-          ],
-        },
-        {
-          id: 2,
-          name: "زیرمحصول A2",
-          href: "/products",
-          children: [
-            {
-              id: 1,
-              name: "محصول A2-1",
-              href: "/products",
-            },
-            {
-              id: 2,
-              name: "محصول A2-2",
-              href: "/products",
-            },
-          ],
-        },
-        {
-          id: 3,
-          name: "زیرمحصول A3",
-          href: "/products",
-          children: [
-            {
-              id: 1,
-              name: "محصول A3-1",
-              href: "/products",
-            },
-            {
-              id: 2,
-              name: "محصول A3-2",
-              href: "/products",
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 2,
-      name: "محصول B",
-      href: "/products",
-
-      items: [
-        {
-          id: 1,
-          name: "زیرمحصول B1",
-          href: "/products",
-          children: [
-            {
-              id: 1,
-              name: "محصول B1-1",
-              href: "/products",
-            },
-          ],
-        },
-        {
-          id: 2,
-          name: "زیرمحصول B2",
-          href: "/products",
-          children: [
-            {
-              id: 1,
-              name: "محصول B2-1",
-              href: "/products",
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 3,
-      name: "محصول C",
-      href: "/products",
-      items: [],
-    },
-    {
-      id: 4,
-      name: "محصول D",
-      href: "/products",
-      items: [],
-    },
-    {
-      id: 5,
-      name: "محصول E",
-      href: "/products",
-      items: [],
-    },
-    {
-      id: 6,
-      name: "محصول F",
-      href: "/products",
-      items: [],
-    },
-  ],
-};
 export const getHeaderActions = ({
   openAuth,
   openCart,
