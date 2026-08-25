@@ -1,16 +1,27 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import type { Product } from "../types/product.types";
 import type { ProductSortOption } from "../types/product-filter.types";
 
 export function useProductFilters(products: Product[]) {
-  const [selectedCategory, setSelectedCategory] = useState("همه");
-  const [selectedVolumes, setSelectedVolumes] = useState<string[]>([]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-  const [maxPrice, setMaxPrice] = useState(4_000_000);
-  const [sortBy, setSortBy] = useState<ProductSortOption>("newest");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const selectedCategory = searchParams.get("category") ?? "همه";
+
+  const selectedBrands =
+    searchParams.get("brand")?.split(",").filter(Boolean) ?? [];
+
+  const selectedVolumes =
+    searchParams.get("volume")?.split(",").filter(Boolean) ?? [];
+
+  const maxPrice = Number(searchParams.get("maxPrice") ?? 4_000_000);
+
+  const sortBy = (searchParams.get("sort") as ProductSortOption) ?? "newest";
 
   const filterOptions = useMemo(() => {
     const categories = [
@@ -29,60 +40,73 @@ export function useProductFilters(products: Product[]) {
     };
   }, [products]);
 
-  const filteredProducts = useMemo(() => {
-    const filtered = products.filter((product) => {
-      const matchesCategory =
-        selectedCategory === "همه" || product.category === selectedCategory;
+  function updateUrl(key: string, value: string | null) {
+    const params = new URLSearchParams(searchParams);
 
-      const matchesVolume =
-        selectedVolumes.length === 0 ||
-        selectedVolumes.includes(product.volume);
+    if (value === null || value === "") {
+      params.delete(key);
+    } else {
+      params.set(key, value);
+    }
 
-      const matchesBrand =
-        selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+    // با تغییر Filter به صفحه اول برمی‌گردیم
+    params.set("page", "1");
 
-      const matchesPrice = product.price <= maxPrice;
+    router.push(`${pathname}?${params.toString()}`);
+  }
 
-      return matchesCategory && matchesVolume && matchesBrand && matchesPrice;
-    });
+  function setSelectedCategory(category: string) {
+    if (category === "همه") {
+      updateUrl("category", null);
+      return;
+    }
 
-    return filtered.sort((a, b) => {
-      switch (sortBy) {
-        case "priceLow":
-          return a.price - b.price;
+    updateUrl("category", category);
+  }
 
-        case "priceHigh":
-          return b.price - a.price;
+  function setMaxPrice(price: number) {
+    updateUrl("maxPrice", price.toString());
+  }
 
-        case "newest":
-        default:
-          return b.id - a.id;
-      }
-    });
-  }, [
-    products,
-    selectedCategory,
-    selectedVolumes,
-    selectedBrands,
-    maxPrice,
-    sortBy,
-  ]);
+  function setSortBy(sort: ProductSortOption) {
+    updateUrl("sort", sort);
+  }
 
-  const toggleVolume = (volume: string) => {
-    setSelectedVolumes((current) =>
-      current.includes(volume)
-        ? current.filter((item) => item !== volume)
-        : [...current, volume],
-    );
-  };
+  function toggleBrand(brand: string) {
+    const current = new Set(selectedBrands);
 
-  const toggleBrand = (brand: string) => {
-    setSelectedBrands((current) =>
-      current.includes(brand)
-        ? current.filter((item) => item !== brand)
-        : [...current, brand],
-    );
-  };
+    if (current.has(brand)) {
+      current.delete(brand);
+    } else {
+      current.add(brand);
+    }
+
+    const value = Array.from(current).join(",");
+
+    updateUrl("brand", value || null);
+  }
+
+  function toggleVolume(volume: string) {
+    const current = new Set(selectedVolumes);
+
+    if (current.has(volume)) {
+      current.delete(volume);
+    } else {
+      current.add(volume);
+    }
+
+    const value = Array.from(current).join(",");
+
+    updateUrl("volume", value || null);
+  }
+
+  function setPage(page: number) {
+    const params = new URLSearchParams(searchParams);
+
+    params.set("page", page.toString());
+
+    router.push(`${pathname}?${params.toString()}`);
+  }
 
   return {
     filterOptions,
@@ -94,13 +118,13 @@ export function useProductFilters(products: Product[]) {
     maxPrice,
     sortBy,
 
-    filteredProducts,
-
     setSelectedCategory,
     setMaxPrice,
     setSortBy,
 
     toggleVolume,
     toggleBrand,
+
+    setPage,
   };
 }

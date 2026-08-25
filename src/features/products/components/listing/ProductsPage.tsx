@@ -9,12 +9,23 @@ import { useProductFilters } from "../../hooks/useProductFilters";
 import { Container } from "@/components/ui/Container";
 
 import type { Product } from "../../types/product.types";
+import ProductPagination from "./ProductPagination";
 
 interface ProductsPageProps {
   products: Product[];
+
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
 }
 
-export default function ProductsPage({ products }: ProductsPageProps) {
+export default function ProductsPage({
+  products,
+  pagination,
+}: ProductsPageProps) {
   const {
     filterOptions,
     selectedCategory,
@@ -22,12 +33,13 @@ export default function ProductsPage({ products }: ProductsPageProps) {
     selectedBrands,
     maxPrice,
     sortBy,
-    filteredProducts,
+
     setSelectedCategory,
     setMaxPrice,
     setSortBy,
     toggleVolume,
     toggleBrand,
+    setPage,
   } = useProductFilters(products);
 
   return (
@@ -51,10 +63,16 @@ export default function ProductsPage({ products }: ProductsPageProps) {
           <ProductsHeader
             sortBy={sortBy}
             onSortChange={setSortBy}
-            total={filteredProducts.length}
+            total={pagination.total}
           />
 
-          <ProductsGrid products={filteredProducts} />
+          <ProductsGrid products={products} />
+
+          <ProductPagination
+            currentPage={pagination.page}
+            totalPages={pagination.totalPages}
+            onPageChange={setPage}
+          />
         </section>
       </div>
     </Container>
