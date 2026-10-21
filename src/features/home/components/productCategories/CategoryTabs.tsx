@@ -19,13 +19,20 @@ export default function CategoryTabs({
   onChange,
 }: CategoryTabsProps) {
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div
+      className={cn(
+        "flex gap-2 overflow-x-auto pb-1 whitespace-nowrap",
+        "scrollbar-none [&::-webkit-scrollbar]:hidden",
+        "md:flex-wrap md:justify-center md:gap-4 md:overflow-visible md:pb-0",
+      )}
+    >
       {categories.map((category) => (
         <button
           key={category.id}
+          type="button"
           onClick={() => onChange(category.id)}
           className={cn(
-            "rounded-full px-6 py-3 transition",
+            "shrink-0 rounded-full px-4 py-2 transition md:px-6 md:py-3",
             activeCategory === category.id
               ? "activeCategoriesBtn"
               : "categoriesBtn",
