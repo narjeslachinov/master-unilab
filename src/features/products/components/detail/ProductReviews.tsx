@@ -9,21 +9,25 @@ import ProductReviewPagination from "./ProductReviewPagination";
 import { Button } from "@/components/ui/Button";
 import ProductReviewModal from "./ProductReviewModal";
 import { useProductDetail } from "./context/ProductDetailContext";
+import type { Review } from "../../types/product-detail.types";
 
 const REVIEWS_PER_PAGE = 3;
 
 export default function ProductReviews() {
   const { product } = useProductDetail();
 
-  const reviews = product.reviews;
   const productId = product.id;
+
+  // نظرات را در state نگه می‌داریم تا نظر جدید بلافاصله در لیست نمایش داده شود
+  const [reviews, setReviews] = useState<Review[]>(product.reviews);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [showModal, setShowModal] = useState(false);
 
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [rating, setRating] = useState(0);
+  const handleReviewCreated = (review: Review) => {
+    setReviews((prev) => [review, ...prev]);
+    setCurrentPage(1);
+  };
 
   const totalPages = Math.ceil(reviews.length / REVIEWS_PER_PAGE);
 
@@ -32,19 +36,6 @@ export default function ProductReviews() {
 
     return reviews.slice(startIndex, startIndex + REVIEWS_PER_PAGE);
   }, [reviews, currentPage]);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!name.trim() || !comment.trim() || rating === 0) {
-      return;
-    }
-
-    setName("");
-    setComment("");
-    setRating(0);
-    setShowModal(false);
-  };
 
   return (
     <section className="flex flex-col gap-6">
@@ -93,6 +84,7 @@ export default function ProductReviews() {
         open={showModal}
         onClose={() => setShowModal(false)}
         productId={productId}
+        onSuccess={handleReviewCreated}
       />
     </section>
   );

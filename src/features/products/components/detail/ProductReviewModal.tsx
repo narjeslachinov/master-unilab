@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { StarIcon, UserCircleIcon } from "@hugeicons/core-free-icons";
+import type { Review } from "../../types/product-detail.types";
 
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -17,12 +18,14 @@ interface ProductReviewModalProps {
   open: boolean;
   onClose: () => void;
   productId: number;
+  onSuccess: (review: Review) => void;
 }
 
 export default function ProductReviewModal({
   open,
   onClose,
   productId,
+  onSuccess,
 }: ProductReviewModalProps) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
@@ -50,7 +53,7 @@ export default function ProductReviewModal({
 
       const response = await createProductReview(productId, payload);
 
-      console.log("Review created:", response.data);
+      onSuccess(response.data);
 
       setName("");
       setComment("");
