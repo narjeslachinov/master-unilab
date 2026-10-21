@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import ProductReviewCard from "./ProductReviewCard";
 import ProductReviewPagination from "./ProductReviewPagination";
 
-import type { Review } from "@/types/product-detail.types";
 import { Button } from "@/components/ui/Button";
 import ProductReviewModal from "./ProductReviewModal";
 import { useProductDetail } from "./context/ProductDetailContext";

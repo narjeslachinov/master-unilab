@@ -1,7 +1,7 @@
 "use client";
 
-import type { Product } from "@/types/product.types";
-import type { ProductDetail as ProductDetailType } from "@/types/product-detail.types";
+import type { Product } from "../../types/product.types";
+import type { ProductDetail as ProductDetailType } from "../../types/product-detail.types";
 
 import ProductGallery from "./ProductGallery";
 import ProductInfo from "./ProductInfo";
