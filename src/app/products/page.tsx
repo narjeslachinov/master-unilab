@@ -2,6 +2,7 @@ import ProductsPage from "@/features/products/components/listing/ProductsPage";
 
 import { getProducts } from "@/features/products/services/products-query.service";
 import { parseProductQuery } from "@/features/products/utils/parse-product-query";
+import { redirect } from "next/navigation";
 
 interface ProductsRouteProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -25,11 +26,7 @@ export default async function Products({ searchParams }: ProductsRouteProps) {
   const result = parseProductQuery(urlSearchParams);
 
   if (!result.success) {
-    return (
-      <main className="bg-neutral-1 min-h-screen pt-16 pb-12 md:pt-40 md:pb-28">
-        <div className="mx-auto max-w-7xl px-4">Invalid product query</div>
-      </main>
-    );
+    redirect("/products");
   }
 
   const response = getProducts(result.data);

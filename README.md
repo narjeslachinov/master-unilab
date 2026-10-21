@@ -1,40 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div dir="rtl">
 
-## Getting Started
+# Unilab | فروشگاه آنلاین لوازم آزمایشگاهی
 
-First, run the development server:
+نمونه‌کار فرانت‌اند یک فروشگاه اینترنتی لوازم آزمایشگاهی، ساخته‌شده با **Next.js (App Router)** و **TypeScript**. رابط کاربری کاملاً فارسی و راست‌به‌چپ (RTL) است و برای نمایش توانایی در معماری فیچر‌محور، فیلتر و مرتب‌سازی مبتنی بر URL، و طراحی ریسپانسیو ساخته شده است.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> این پروژه صرفاً **نمونه‌کار** است. داده‌ها نمونه (mock) هستند و فروش واقعی انجام نمی‌شود.
+
+🔗 **دمو آنلاین:** [https://YOUR-LINK.vercel.app](https://YOUR-LINK.vercel.app)
+
+## صفحات
+
+| مسیر | توضیح |
+| --- | --- |
+| `/` | صفحه‌ی خانه: اسلایدر اصلی، خدمات، دسته‌بندی محصولات با تب و اسلایدر، برندها، درباره‌ی ما، مقالات |
+| `/products` | لیست محصولات با فیلتر، مرتب‌سازی و صفحه‌بندی |
+| `/products/[id]` | جزئیات محصول: گالری، تب‌های توضیحات، مشخصات فنی و دانلودها، نظرات کاربران و محصولات مرتبط |
+
+## قابلیت‌ها
+
+**لیست محصولات**
+- فیلتر بر اساس دسته‌بندی، برند، حجم و حداکثر قیمت
+- مرتب‌سازی بر اساس جدیدترین، ارزان‌ترین، گران‌ترین و بیشترین امتیاز
+- صفحه‌بندی (پیش‌فرض ۶ محصول در هر صفحه)
+- تمام فیلترها در **query string** نگه‌داری می‌شوند، پس هر نتیجه قابل اشتراک‌گذاری و قابل بازگشت با دکمه‌ی Back است. مثال: `/products?brand=Pyrex,Simax&sort=price-asc&page=2`
+- اعتبارسنجی پارامترهای URL به‌صورت دستی در `parse-product-query.ts`
+
+**جزئیات محصول**
+- گالری تصاویر و تب‌های توضیحات، مشخصات فنی و دانلودها
+- ثبت نظر و امتیاز از طریق مودال و صفحه‌بندی نظرات (با API Route)
+- نمایش محصولات مرتبط هم‌دسته
+
+**رابط کاربری**
+- هدر دسکتاپ با مگامنو و جست‌وجو، هدر موبایل با نوار ناوبری پایین
+- مودال سبد خرید، علاقه‌مندی‌ها و ورود/ثبت‌نام
+- طراحی ریسپانسیو، انیمیشن با Framer Motion و اسلایدرها با Swiper
+
+## API Routeها
+
+| متد | مسیر | توضیح |
+| --- | --- | --- |
+| GET | `/api/products` | لیست محصولات با فیلتر، مرتب‌سازی و صفحه‌بندی |
+| GET | `/api/products/[id]` | جزئیات یک محصول |
+| GET | `/api/products/[id]/related` | محصولات مرتبط |
+| POST | `/api/products/[id]/reviews` | ثبت نظر جدید |
+
+پارامترهای قابل قبول در `GET /api/products`:
+
+| پارامتر | نمونه | توضیح |
+| --- | --- | --- |
+| `category` | `category=ظروف شیشه‌ای` | دسته‌بندی |
+| `brand` | `brand=Pyrex,Simax` | چند برند، جداشده با ویرگول |
+| `volume` | `volume=100ml,250ml` | چند حجم، جداشده با ویرگول |
+| `minPrice` / `maxPrice` | `maxPrice=2000000` | بازه‌ی قیمت (عدد صحیح) |
+| `sort` | `sort=price-asc` | یکی از `newest`، `price-asc`، `price-desc`، `rating-desc` |
+| `page` / `limit` | `page=2&limit=6` | صفحه‌بندی |
+
+در صورت نامعتبر بودن پارامترها، پاسخ `400` همراه با پیام خطا برمی‌گردد.
+
+## تکنولوژی‌ها
+
+| بخش | ابزار |
+| --- | --- |
+| فریم‌ورک | Next.js 16 (App Router، Turbopack) |
+| زبان و رابط | React 19 (به‌همراه React Compiler)، TypeScript |
+| استایل | Tailwind CSS 4، class-variance-authority، tailwind-merge، clsx |
+| انیمیشن و اسلایدر | Framer Motion، Swiper |
+| آیکون‌ها | Hugeicons |
+| فونت‌ها | Vazir و IRANSans (فونت محلی) |
+| کیفیت کد | ESLint، Prettier، Husky، lint-staged، Commitlint (Conventional Commits) |
+| دپلوی | Vercel |
+
+## ساختار پروژه
+
+پروژه به‌صورت **فیچر‌محور** سازمان‌دهی شده است؛ هر قابلیت کامپوننت، داده، تایپ، هوک و سرویس خودش را دارد.
+
+```text
+src/
+├── app/                    # مسیرها و API Routeها (App Router)
+│   ├── api/products/
+│   ├── products/[id]/
+│   └── page.tsx
+├── components/ui/          # کامپوننت‌های پایه (Button، Input، Modal، ...)
+├── features/
+│   ├── home/               # بخش‌های صفحه‌ی خانه
+│   ├── products/           # لیست، فیلتر، جزئیات، سرویس‌ها و utils
+│   ├── layout/             # هدر و فوتر
+│   ├── AuthModal/          # ورود و ثبت‌نام
+│   ├── shoppingCartModal/  # سبد خرید
+│   └── wishlistModal/      # علاقه‌مندی‌ها
+├── lib/                    # api-client، خطاها و توابع کمکی
+├── fonts/
+└── styles/                 # توکن‌های طراحی
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+جریان فیلتر محصولات:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+ProductFilters (کامپوننت کلاینت)
+  → useProductFilters (به‌روزرسانی query string)
+  → app/products/page.tsx (Server Component)
+  → parseProductQuery (اعتبارسنجی)
+  → products-query.service (فیلتر، مرتب‌سازی، صفحه‌بندی)
+  → رابط کاربری
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## اجرای پروژه روی سیستم خودتان
 
-## Learn More
+پیش‌نیاز: Node.js نسخه‌ی ۲۰.۹ یا بالاتر.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/narjeslachinov/master-unilab.git
+cd master-unilab
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+سپس [http://localhost:3000](http://localhost:3000) را باز کنید. متغیر محیطی لازم نیست.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| دستور | کاربرد |
+| --- | --- |
+| `npm run dev` | اجرای محیط توسعه |
+| `npm run build` | ساخت نسخه‌ی تولید |
+| `npm run start` | اجرای نسخه‌ی ساخته‌شده |
+| `npm run lint` | بررسی ESLint |
+| `npm run format` | قالب‌بندی با Prettier |
 
-## Deploy on Vercel
+## محدودیت‌های نسخه‌ی نمونه
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- داده‌ی محصولات، سبد خرید و علاقه‌مندی‌ها ثابت و داخل کد است و دیتابیس ندارد.
+- فرم‌های ورود و ثبت‌نام فقط رابط کاربری هستند و احراز هویت واقعی ندارند.
+- نظرات ثبت‌شده فقط در حافظه‌ی سرور نگه‌داری می‌شوند و دائمی نیستند (روی Vercel با ری‌استارت سرور از بین می‌روند).
+- در نسخه‌ی واقعی، این بخش‌ها باید به دیتابیس و سیستم احراز هویت وصل شوند.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## نویسنده
 
-## Documentation
+**نرجس لاچین اف** — [github.com/narjeslachinov](https://github.com/narjeslachinov)
 
-- docs/setup.md
+</div>
